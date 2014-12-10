@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double OSGridPointConversionVersionNumber;
 FOUNDATION_EXPORT const unsigned char OSGridPointConversionVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <OSGridPointConversion/PublicHeader.h>
-
+#import <OSGridPointConversion/OSGridPoint.h>
 

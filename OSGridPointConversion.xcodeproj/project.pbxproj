@@ -18,7 +18,7 @@
 		B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA821A3865A70067FEA9 /* RMFoundation.h */; };
 		B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */; };
 		B372FA8E1A386AF00067FEA9 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA8D1A386AF00067FEA9 /* proj_api.h */; };
-		B372FA901A386DEB0067FEA9 /* libProj4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B372FA8F1A386DEB0067FEA9 /* libProj4.a */; };
+		B372FA901A386DEB0067FEA9 /* libProj4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B372FA8F1A386DEB0067FEA9 /* libProj4.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
