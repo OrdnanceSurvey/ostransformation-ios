@@ -10,7 +10,7 @@
 		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B360D4781A3862F500F537F9 /* OSGridPointConversion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */; };
 		B360D47F1A3862F500F537F9 /* OSGridPointConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */; };
-		B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA791A3865430067FEA9 /* OSGridPoint.h */; };
+		B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA791A3865430067FEA9 /* OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7A1A3865430067FEA9 /* OSGridPoint.m */; };
 		B372FA7F1A38658B0067FEA9 /* RMProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA7D1A38658B0067FEA9 /* RMProjection.h */; };
 		B372FA801A38658B0067FEA9 /* RMProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7E1A38658B0067FEA9 /* RMProjection.m */; };
@@ -146,8 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B372FA8E1A386AF00067FEA9 /* proj_api.h in Headers */,
-				B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */,
 				B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */,
+				B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */,
 				B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */,
 				B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */,
 				B372FA7F1A38658B0067FEA9 /* RMProjection.h in Headers */,

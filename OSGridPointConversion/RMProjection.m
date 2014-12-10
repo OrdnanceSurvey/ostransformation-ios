@@ -29,28 +29,25 @@
 #import "proj_api.h"
 #import "RMProjection.h"
 
-@implementation RMProjection
-{
+@implementation RMProjection {
     // The internal projection that has been setup
     projPJ _internalProjection;
 
     // The size of the earth, in projected units (meters, most often)
-    RMProjectedRect	_planetBounds;
+    RMProjectedRect _planetBounds;
 
     // Hardcoded to YES in #initWithString:InBounds:
-    bool _projectionWrapsHorizontally:1;
-    bool _latLngIsWGS84:1;
+    bool _projectionWrapsHorizontally : 1;
+    bool _latLngIsWGS84 : 1;
 }
 
-- (id)initWithString:(NSString *)proj4String inBounds:(RMProjectedRect)projectedBounds
-{
+- (id)initWithString:(NSString *)proj4String inBounds:(RMProjectedRect)projectedBounds {
     if (!(self = [super init]))
         return nil;
 
     _internalProjection = pj_init_plus([proj4String UTF8String]);
 
-    if (_internalProjection == NULL)
-    {
+    if (_internalProjection == NULL) {
         NSLog(@"Unhandled error creating projection. String is %@", proj4String);
         return nil;
     }
@@ -61,29 +58,24 @@
     return self;
 }
 
-- (id)initWithString:(NSString *)proj4String
-{
+- (id)initWithString:(NSString *)proj4String {
     RMProjectedRect theBounds;
     theBounds = RMProjectedRectMake(0, 0, 0, 0);
 
     return [self initWithString:proj4String inBounds:theBounds];
 }
 
-- (id)init
-{
+- (id)init {
     return [self initWithString:@"+proj=latlong +ellps=WGS84"];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     if (self.internalProjection) {
         pj_free(self.internalProjection);
     }
-
 }
 
-- (RMProjectedPoint)wrapPointHorizontally:(RMProjectedPoint)aPoint
-{
+- (RMProjectedPoint)wrapPointHorizontally:(RMProjectedPoint)aPoint {
     if (!self.projectionWrapsHorizontally || self.planetBounds.size.width == 0.0f || self.planetBounds.size.height == 0.0f)
         return aPoint;
 
@@ -96,8 +88,7 @@
     return aPoint;
 }
 
-- (RMProjectedPoint)constrainPointToBounds:(RMProjectedPoint)aPoint
-{
+- (RMProjectedPoint)constrainPointToBounds:(RMProjectedPoint)aPoint {
     if (self.planetBounds.size.width == 0.0f || self.planetBounds.size.height == 0.0f)
         return aPoint;
 
@@ -111,101 +102,85 @@
     return aPoint;
 }
 
-- (RMProjectedPoint)coordinateToProjectedPoint:(CLLocationCoordinate2D)aLatLong
-{
-    projUV uv = {
-        aLatLong.longitude * DEG_TO_RAD,
-        aLatLong.latitude * DEG_TO_RAD
-    };
+- (RMProjectedPoint)coordinateToProjectedPoint:(CLLocationCoordinate2D)aLatLong {
+    projUV uv = {aLatLong.longitude * DEG_TO_RAD, aLatLong.latitude * DEG_TO_RAD};
 
     projUV result;
-    if (self.latLngIsWGS84)
-    {
+    if (self.latLngIsWGS84) {
         result = pj_fwd(uv, _internalProjection);
-    }
-    else
-    {
+    } else {
         pj_transform([[self class] WGS84LatLong]->_internalProjection, self.internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
         result = uv;
     }
 
     RMProjectedPoint result_point = {
-        result.u,
-        result.v,
+        result.u, result.v,
     };
 
     return result_point;
 }
 
-- (CLLocationCoordinate2D)projectedPointToCoordinate:(RMProjectedPoint)aPoint
-{
+- (CLLocationCoordinate2D)projectedPointToCoordinate:(RMProjectedPoint)aPoint {
     projUV uv = {
-        aPoint.x,
-        aPoint.y,
+        aPoint.x, aPoint.y,
     };
 
     projUV result;
-    if (self.latLngIsWGS84)
-    {
+    if (self.latLngIsWGS84) {
         result = pj_inv(uv, self.internalProjection);
-    }
-    else
-    {
+    } else {
         pj_transform(_internalProjection, [[self class] WGS84LatLong]->_internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
         result = uv;
     }
 
     CLLocationCoordinate2D result_coordinate = {
-        result.v * RAD_TO_DEG,
-        result.u * RAD_TO_DEG,
+        result.v * RAD_TO_DEG, result.u * RAD_TO_DEG,
     };
 
     return result_coordinate;
 }
 
-+ (RMProjection *)googleProjection
-{
++ (RMProjection *)googleProjection {
     assert([NSThread isMainThread]);
     static RMProjection *_googleProjection = nil;
 
-    if (_googleProjection)
-    {
+    if (_googleProjection) {
         return _googleProjection;
-    }
-    else
-    {
+    } else {
         RMProjectedRect theBounds = RMProjectedRectMake(-20037508.34, -20037508.34, 20037508.34 * 2, 20037508.34 * 2);
 
-        _googleProjection = [[RMProjection alloc] initWithString:@"+title= Google Mercator EPSG:900913 +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +datum=WGS84 +no_defs"
-                                                        inBounds:theBounds];
+        _googleProjection =
+            [[RMProjection alloc] initWithString:@"+title= Google Mercator EPSG:900913 +proj=merc " @"+a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 "
+                                  @"+x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null " @"+datum=WGS84 +no_defs"
+                                        inBounds:theBounds];
         return _googleProjection;
     }
 }
 
-+ (RMProjection *)WGS84LatLong
-{
-    static RMProjection * _latitudeLongitudeProjection;
++ (RMProjection *)WGS84LatLong {
+    static RMProjection *_latitudeLongitudeProjection;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         RMProjectedRect theBounds = RMProjectedRectMake(-kMaxLong, -kMaxLat, 360.0, kMaxLong);
 
-        _latitudeLongitudeProjection = [[RMProjection alloc] initWithString:@"+proj=latlong +ellps=WGS84 +datum=WGS84"
-                                                                   inBounds:theBounds];
+        _latitudeLongitudeProjection = [[RMProjection alloc] initWithString:@"+proj=latlong +ellps=WGS84 +datum=WGS84" inBounds:theBounds];
     });
 
     return _latitudeLongitudeProjection;
 }
 
-+ (RMProjection *)OSGB36NationalGrid
-{
++ (RMProjection *)OSGB36NationalGrid {
     static RMProjection *proj;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        // These bounds correspond to area covered by the OV0/OV1/OV2 map tilesets.
-        RMProjectedRect bounds = {{0,0},{700000,1300000}};
-        proj = [[RMProjection alloc] initWithString:@"+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs" inBounds:bounds];
+        // These bounds correspond to area covered by the OV0/OV1/OV2 map
+        // tilesets.
+        RMProjectedRect bounds = {{0, 0}, {700000, 1300000}};
+        proj = [[RMProjection alloc]
+            initWithString:@"+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 " @"+x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 " @"+units=m +no_defs"
+                  inBounds:bounds];
     });
 
     return proj;

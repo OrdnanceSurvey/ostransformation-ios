@@ -44,21 +44,20 @@ extern "C" {
 
 extern char const pj_release[]; /* global release id string */
 
-#define RAD_TO_DEG	57.29577951308232
-#define DEG_TO_RAD	.0174532925199432958
+#define RAD_TO_DEG 57.29577951308232
+#define DEG_TO_RAD .0174532925199432958
 
-
-extern int pj_errno;	/* global error return code */
+extern int pj_errno; /* global error return code */
 
 #if !defined(PROJECTS_H)
-    typedef struct { double u, v; } projUV;
-    typedef void *projPJ;
-    #define projXY projUV
-    #define projLP projUV
+typedef struct { double u, v; } projUV;
+typedef void *projPJ;
+#define projXY projUV
+#define projLP projUV
 #else
-    typedef PJ *projPJ;
-#   define projXY	XY
-#   define projLP       LP
+typedef PJ *projPJ;
+#define projXY XY
+#define projLP LP
 #endif
 
 /* procedure prototypes */
@@ -66,31 +65,23 @@ extern int pj_errno;	/* global error return code */
 projXY pj_fwd(projLP, projPJ);
 projLP pj_inv(projXY, projPJ);
 
-int pj_transform( projPJ src, projPJ dst, long point_count, int point_offset,
-                  double *x, double *y, double *z );
-int pj_datum_transform( projPJ src, projPJ dst, long point_count, int point_offset,
-                        double *x, double *y, double *z );
-int pj_geocentric_to_geodetic( double a, double es,
-                               long point_count, int point_offset,
-                               double *x, double *y, double *z );
-int pj_geodetic_to_geocentric( double a, double es,
-                               long point_count, int point_offset,
-                               double *x, double *y, double *z );
-int pj_compare_datums( projPJ srcdefn, projPJ dstdefn );
-int pj_apply_gridshift( const char *, int, 
-                        long point_count, int point_offset,
-                        double *x, double *y, double *z );
+int pj_transform(projPJ src, projPJ dst, long point_count, int point_offset, double *x, double *y, double *z);
+int pj_datum_transform(projPJ src, projPJ dst, long point_count, int point_offset, double *x, double *y, double *z);
+int pj_geocentric_to_geodetic(double a, double es, long point_count, int point_offset, double *x, double *y, double *z);
+int pj_geodetic_to_geocentric(double a, double es, long point_count, int point_offset, double *x, double *y, double *z);
+int pj_compare_datums(projPJ srcdefn, projPJ dstdefn);
+int pj_apply_gridshift(const char *, int, long point_count, int point_offset, double *x, double *y, double *z);
 void pj_deallocate_grids(void);
 int pj_is_latlong(projPJ);
 int pj_is_geocent(projPJ);
 void pj_pr_list(projPJ);
 void pj_free(projPJ);
-void pj_set_finder( const char *(*)(const char *) );
-void pj_set_searchpath ( int count, const char **path );
+void pj_set_finder(const char *(*)(const char *));
+void pj_set_searchpath(int count, const char **path);
 projPJ pj_init(int, char **);
 projPJ pj_init_plus(const char *);
 char *pj_get_def(projPJ, int);
-projPJ pj_latlong_from_proj( projPJ );
+projPJ pj_latlong_from_proj(projPJ);
 void *pj_malloc(size_t);
 void pj_dalloc(void *);
 char *pj_strerrno(int);
@@ -105,4 +96,3 @@ void pj_cleanup_lock(void);
 #endif
 
 #endif /* ndef PROJ_API_H */
-

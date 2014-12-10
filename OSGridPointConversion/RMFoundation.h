@@ -34,40 +34,36 @@
 #import <CoreLocation/CoreLocation.h>
 #endif
 
-/*! \struct RMProjectedPoint 
+/*! \struct RMProjectedPoint
  \brief coordinates, in projected meters, paralleling CGPoint */
-typedef struct {
-	double x, y;
-} RMProjectedPoint;
+typedef struct { double x, y; } RMProjectedPoint;
 
-/*! \struct RMProjectedSize 
+/*! \struct RMProjectedSize
  \brief width/height struct, in projected meters, paralleling CGSize */
-typedef struct {
-	double width, height;
-} RMProjectedSize;
+typedef struct { double width, height; } RMProjectedSize;
 
-/*! \struct RMProjectedRect 
+/*! \struct RMProjectedRect
  \brief location and size, in projected meters, paralleling CGRect */
 typedef struct {
-	RMProjectedPoint origin;
-	RMProjectedSize size;
+    RMProjectedPoint origin;
+    RMProjectedSize size;
 } RMProjectedRect;
 
 #if __OBJC__
 /*! \struct RMSphericalTrapezium
  \brief a rectangle, specified by two corner coordinates */
 typedef struct {
-	CLLocationCoordinate2D southWest;
-	CLLocationCoordinate2D northEast;
+    CLLocationCoordinate2D southWest;
+    CLLocationCoordinate2D northEast;
 } RMSphericalTrapezium;
 #endif
 
 #pragma mark -
 
 RMProjectedPoint RMScaleProjectedPointAboutPoint(RMProjectedPoint point, float factor, RMProjectedPoint pivot);
-RMProjectedRect  RMScaleProjectedRectAboutPoint(RMProjectedRect rect, float factor, RMProjectedPoint pivot);
+RMProjectedRect RMScaleProjectedRectAboutPoint(RMProjectedRect rect, float factor, RMProjectedPoint pivot);
 RMProjectedPoint RMTranslateProjectedPointBy(RMProjectedPoint point, RMProjectedSize delta);
-RMProjectedRect  RMTranslateProjectedRectBy(RMProjectedRect rect, RMProjectedSize delta);
+RMProjectedRect RMTranslateProjectedRectBy(RMProjectedRect rect, RMProjectedSize delta);
 
 #pragma mark -
 
@@ -85,8 +81,8 @@ bool RMProjectedSizeContainsProjectedSize(RMProjectedSize size1, RMProjectedSize
 RMProjectedRect RMProjectedRectUnion(RMProjectedRect rect1, RMProjectedRect rect2);
 
 RMProjectedPoint RMProjectedPointMake(double x, double y);
-RMProjectedRect  RMProjectedRectMake(double x, double y, double width, double height);
-RMProjectedSize  RMProjectedSizeMake(double width, double heigth);
+RMProjectedRect RMProjectedRectMake(double x, double y, double width, double height);
+RMProjectedSize RMProjectedSizeMake(double width, double heigth);
 
 RMProjectedRect RMProjectedRectZero();
 bool RMProjectedRectIsZero(RMProjectedRect rect);
