@@ -223,7 +223,7 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     XCTAssertEqualWithAccuracy(sdX, 0.0, 2.0, @"Easting error sd");
     XCTAssertEqualWithAccuracy(sdY, 0.0, 2.0, @"Northing error sd");
     // Maximum error is a bit poor
-    XCTAssertEqualWithAccuracy(maxdist, 0.0, 5.2, @"Maximum error dist");
+    XCTAssertEqualWithAccuracy(maxdist, 0.0, 5.0, @"Maximum error dist");
 }
 
 - (void)testOSGridPointToLatLngToGridPoint {
@@ -239,10 +239,13 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     for (size_t i = 0; i < n; i++) {
         CLLocationCoordinate2D coord = OSCoordinateForGridPoint((OSGridPoint){TEST_COORDINATES[i].e, TEST_COORDINATES[i].n});
         OSGridPoint p = OSGridPointForCoordinate(coord);
+
+        // Calculate distance on the ground this point differs from the reference dataset
         double diffX = p.easting - TEST_COORDINATES[i].e;
         double diffY = p.northing - TEST_COORDINATES[i].n;
         double distsq = diffX * diffX + diffY * diffY;
         double dist = sqrt(distsq);
+
         maxdist = MAX(maxdist, dist);
         sumX += diffX;
         sumY += diffY;
