@@ -10,6 +10,15 @@
 		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B360D4781A3862F500F537F9 /* OSGridPointConversion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */; };
 		B360D47F1A3862F500F537F9 /* OSGridPointConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */; };
+		B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA791A3865430067FEA9 /* OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7A1A3865430067FEA9 /* OSGridPoint.m */; };
+		B372FA7F1A38658B0067FEA9 /* RMProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA7D1A38658B0067FEA9 /* RMProjection.h */; };
+		B372FA801A38658B0067FEA9 /* RMProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7E1A38658B0067FEA9 /* RMProjection.m */; };
+		B372FA831A3865A70067FEA9 /* RMFoundation.c in Sources */ = {isa = PBXBuildFile; fileRef = B372FA811A3865A70067FEA9 /* RMFoundation.c */; };
+		B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA821A3865A70067FEA9 /* RMFoundation.h */; };
+		B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */; };
+		B372FA8E1A386AF00067FEA9 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA8D1A386AF00067FEA9 /* proj_api.h */; };
+		B372FA901A386DEB0067FEA9 /* libProj4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B372FA8F1A386DEB0067FEA9 /* libProj4.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +38,15 @@
 		B360D4771A3862F500F537F9 /* OSGridPointConversionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSGridPointConversionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B360D47D1A3862F500F537F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSGridPointConversionTests.m; sourceTree = "<group>"; };
+		B372FA791A3865430067FEA9 /* OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSGridPoint.h; sourceTree = "<group>"; };
+		B372FA7A1A3865430067FEA9 /* OSGridPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSGridPoint.m; sourceTree = "<group>"; };
+		B372FA7D1A38658B0067FEA9 /* RMProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMProjection.h; sourceTree = "<group>"; };
+		B372FA7E1A38658B0067FEA9 /* RMProjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMProjection.m; sourceTree = "<group>"; };
+		B372FA811A3865A70067FEA9 /* RMFoundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RMFoundation.c; sourceTree = "<group>"; };
+		B372FA821A3865A70067FEA9 /* RMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFoundation.h; sourceTree = "<group>"; };
+		B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
+		B372FA8D1A386AF00067FEA9 /* proj_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proj_api.h; sourceTree = "<group>"; };
+		B372FA8F1A386DEB0067FEA9 /* libProj4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProj4.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B372FA901A386DEB0067FEA9 /* libProj4.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +91,14 @@
 			isa = PBXGroup;
 			children = (
 				B360D4711A3862F500F537F9 /* OSGridPointConversion.h */,
+				B372FA791A3865430067FEA9 /* OSGridPoint.h */,
+				B372FA7A1A3865430067FEA9 /* OSGridPoint.m */,
+				B372FA7D1A38658B0067FEA9 /* RMProjection.h */,
+				B372FA7E1A38658B0067FEA9 /* RMProjection.m */,
+				B372FA821A3865A70067FEA9 /* RMFoundation.h */,
+				B372FA811A3865A70067FEA9 /* RMFoundation.c */,
+				B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */,
+				B372FA911A386F8B0067FEA9 /* Proj4 */,
 				B360D46F1A3862F500F537F9 /* Supporting Files */,
 			);
 			path = OSGridPointConversion;
@@ -102,6 +129,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B372FA911A386F8B0067FEA9 /* Proj4 */ = {
+			isa = PBXGroup;
+			children = (
+				B372FA8D1A386AF00067FEA9 /* proj_api.h */,
+				B372FA8F1A386DEB0067FEA9 /* libProj4.a */,
+			);
+			name = Proj4;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -109,7 +145,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B372FA8E1A386AF00067FEA9 /* proj_api.h in Headers */,
+				B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */,
 				B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */,
+				B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */,
+				B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */,
+				B372FA7F1A38658B0067FEA9 /* RMProjection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */,
+				B372FA831A3865A70067FEA9 /* RMFoundation.c in Sources */,
+				B372FA801A38658B0067FEA9 /* RMProjection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +369,10 @@
 				INFOPLIST_FILE = OSGridPointConversion/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSGridPointConversion",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -340,6 +388,10 @@
 				INFOPLIST_FILE = OSGridPointConversion/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSGridPointConversion",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -394,6 +446,7 @@
 				B360D4841A3862F500F537F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B360D4851A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSGridPointConversionTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +455,7 @@
 				B360D4871A3862F500F537F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
