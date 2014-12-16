@@ -152,9 +152,9 @@ CLLocationCoordinate2D OSCoordinateForGridPoint(OSGridPoint gridPoint) {
     return [[RMProjection OSGB36NationalGrid] projectedPointToCoordinate:(RMProjectedPoint){gridPoint.easting, gridPoint.northing}];
 }
 
-float OSMetersBetweenGridPoints(OSGridPoint gp1, OSGridPoint gp2) {
-    float dx = (gp1.easting - gp2.easting);
-    float dy = (gp1.northing - gp2.northing);
+OSGridDistance OSMetersBetweenGridPoints(OSGridPoint gp1, OSGridPoint gp2) {
+    OSGridDistance dx = (gp1.easting - gp2.easting);
+    OSGridDistance dy = (gp1.northing - gp2.northing);
     return sqrtf(dx * dx + dy * dy);
 }
 
@@ -181,8 +181,7 @@ OSGridSize OSGridSizeForRegion(OSCoordinateRegion region) {
 
 // Convert meters to long/lat at a particular location assuming locally flat
 // earth.
-OSCoordinateRegion OSCoordinateRegionMakeWithDistance(CLLocationCoordinate2D centerCoordinate, CLLocationDistance latitudinalMeters,
-                                                      CLLocationDistance longitudinalMeters) {
+OSCoordinateRegion OSCoordinateRegionMakeWithDistance(CLLocationCoordinate2D centerCoordinate, CLLocationDistance latitudinalMeters, CLLocationDistance longitudinalMeters) {
     // Local flat earth approximation. Good enough for OS Coordinate area
     OSCoordinateRegion region;
     region.center = centerCoordinate;
@@ -191,7 +190,7 @@ OSCoordinateRegion OSCoordinateRegionMakeWithDistance(CLLocationCoordinate2D cen
     double a = 6378137;
     double f = f = 1.0 / 298.257223563;
     double e2 = f * (2 - f);
-    double DEG2RAD = 3.1415926535 / 180.0;
+    double DEG2RAD = M_PI / 180.0;
     double RAD2DEG = 1 / DEG2RAD;
     double s = sin(centerCoordinate.latitude * DEG2RAD);
     double s2 = s * s;
@@ -204,7 +203,7 @@ OSCoordinateRegion OSCoordinateRegionMakeWithDistance(CLLocationCoordinate2D cen
     return region;
 }
 
-OSGridRect OSGridRectMake(CGFloat easting, CGFloat northing, CGFloat width, CGFloat height) {
+OSGridRect OSGridRectMake(OSGridDistance easting, OSGridDistance northing, OSGridDistance width, OSGridDistance height) {
     OSGridRect rect;
     rect.originSW.easting = easting;
     rect.originSW.northing = northing;
@@ -213,13 +212,13 @@ OSGridRect OSGridRectMake(CGFloat easting, CGFloat northing, CGFloat width, CGFl
     return rect;
 }
 
-OSGridRect OSGridRectOffset(OSGridRect rect, CGFloat dx, CGFloat dy) {
+OSGridRect OSGridRectOffset(OSGridRect rect, OSGridDistance dx, OSGridDistance dy) {
     rect.originSW.easting += dx;
     rect.originSW.northing += dy;
     return rect;
 }
 
-OSGridRect OSGridRectInset(OSGridRect rect, CGFloat dx, CGFloat dy) {
+OSGridRect OSGridRectInset(OSGridRect rect, OSGridDistance dx, OSGridDistance dy) {
     if (OSGridRectIsNull(rect)) {
         return rect;
     }
