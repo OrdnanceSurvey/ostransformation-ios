@@ -104,7 +104,6 @@
 // SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
 #import <CoreLocation/CLLocation.h>
 
 // OSTN02 data is given in the rect with bottom-left (0,0) and top-right
@@ -122,6 +121,14 @@ enum {
     OSGridHeight = 1300000,
 };
 
+/*
+ *  OSLocationDistance
+ *
+ *  Discussion:
+ *    Type used to represent a distance in meters.
+ */
+typedef double OSGridDistance;
+
 /**
 ** Represents a point on the OSGB36 National Grid (EPSG:27700) as a pair of
 *floats.
@@ -132,8 +139,8 @@ enum {
 **   So it can represent points to ±6.25 cm
 */
 typedef struct {
-    CGFloat easting;
-    CGFloat northing;
+    OSGridDistance easting;
+    OSGridDistance northing;
 } OSGridPoint;
 
 /// @name Coordinate conversions
@@ -177,11 +184,11 @@ static inline bool OSGridPointIsValid(OSGridPoint p) {
 }
 
 bool OSGridPointIsWithinBounds(OSGridPoint p);
-float OSMetersBetweenGridPoints(OSGridPoint gp1, OSGridPoint gp2);
+OSGridDistance OSMetersBetweenGridPoints(OSGridPoint gp1, OSGridPoint gp2);
 
 typedef struct {
-    CGFloat width;
-    CGFloat height;
+    OSGridDistance width;
+    OSGridDistance height;
 } OSGridSize;
 
 static inline bool OSGridSizeEqualToSize(OSGridSize s1, OSGridSize s2) {
@@ -196,18 +203,35 @@ typedef struct {
 extern OSGridRect const OSNationalGridBounds;
 extern OSGridRect const OSGridRectNull;
 
-OSGridRect OSGridRectMake(CGFloat easting, CGFloat northing, CGFloat width, CGFloat height);
-OSGridRect OSGridRectOffset(OSGridRect rect, CGFloat dx, CGFloat dy);
-OSGridRect OSGridRectInset(OSGridRect rect, CGFloat dx, CGFloat dy);
+OSGridRect OSGridRectMake(OSGridDistance easting, OSGridDistance northing, OSGridDistance width, OSGridDistance height);
+OSGridRect OSGridRectOffset(OSGridRect rect, OSGridDistance dx, OSGridDistance dy);
+OSGridRect OSGridRectInset(OSGridRect rect, OSGridDistance dx, OSGridDistance dy);
 OSGridRect OSGridRectUnion(OSGridRect rect1, OSGridRect rect2);
 OSGridRect OSGridRectIntersection(OSGridRect rect1, OSGridRect rect2);
 
 bool OSGridRectIsNull(OSGridRect gr);
 
+static inline OSGridDistance OSGridRectMinEasting(OSGridRect rect) {
+    return rect.originSW.easting;
+}
+
+static inline OSGridDistance OSGridRectMaxEasting(OSGridRect rect) {
+    return rect.originSW.easting + rect.size.width;
+}
+
+static inline OSGridDistance OSGridRectMinNorthing(OSGridRect rect) {
+    return rect.originSW.northing;
+}
+
+static inline OSGridDistance OSGridRectMaxNorthing(OSGridRect rect) {
+    return rect.originSW.northing + rect.size.height;
+}
+
 static inline bool OSGridRectIntersectsRect(OSGridRect r1, OSGridRect r2) {
-    CGRect rr1 = (CGRect){{r1.originSW.easting, r1.originSW.northing}, {r1.size.width, r1.size.height}};
-    CGRect rr2 = (CGRect){{r2.originSW.easting, r2.originSW.northing}, {r2.size.width, r2.size.height}};
-    return CGRectIntersectsRect(rr1, rr2);
+    return !(OSGridRectMaxEasting(r1) <= OSGridRectMinEasting(r2) ||
+             OSGridRectMaxNorthing(r1) <= OSGridRectMinNorthing(r2) ||
+             OSGridRectMinEasting(r1) >= OSGridRectMaxEasting(r2) ||
+             OSGridRectMinNorthing(r1) >= OSGridRectMaxNorthing(r2));
 }
 
 static inline bool OSGridRectContainsPoint(OSGridRect r1, OSGridPoint p) {
@@ -247,5 +271,4 @@ typedef struct {
 OSGridRect OSGridRectForCoordinateRegion(OSCoordinateRegion region);
 OSCoordinateRegion OSCoordinateRegionForGridRect(OSGridRect gridRect);
 
-OSCoordinateRegion OSCoordinateRegionMakeWithDistance(CLLocationCoordinate2D centerCoordinate, CLLocationDistance latitudinalMeters,
-                                                      CLLocationDistance longitudinalMeters);
+OSCoordinateRegion OSCoordinateRegionMakeWithDistance(CLLocationCoordinate2D centerCoordinate, CLLocationDistance latitudinalMeters, CLLocationDistance longitudinalMeters);

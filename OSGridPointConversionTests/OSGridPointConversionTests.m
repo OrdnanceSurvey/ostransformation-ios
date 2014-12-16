@@ -314,8 +314,8 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
         OSGridPoint gp = (OSGridPoint){TEST_COORDINATES[i].e, TEST_COORDINATES[i].n};
         CLLocationCoordinate2D coord = OSCoordinateForGridPoint(gp);
         OSGridPoint gp2 = OSGridPointForCoordinate(coord);
-        XCTAssertEqualWithAccuracy((gp.easting - gp2.easting), (float)0.0, .001, @"Error E");
-        XCTAssertEqualWithAccuracy((gp.northing - gp2.northing), (float)0.0, .001, @"Error N");
+        XCTAssertEqualWithAccuracy((gp.easting - gp2.easting), (double)0.0, .0015, @"Error E");
+        XCTAssertEqualWithAccuracy((gp.northing - gp2.northing), (double)0.0, .0015, @"Error N");
         // NSLog(@"Station %s diff %g °N %g °E", TEST_COORDINATES[i].station, diffX,
         // diffY);
     }
@@ -326,19 +326,19 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     for (size_t i = 0; i < n; i++) {
         CLLocationCoordinate2D coord = (CLLocationCoordinate2D){.latitude = TEST_COORDINATES[i].lat, TEST_COORDINATES[i].lng};
 
-        double sizeX = 1000;
-        double sizeY = 2000;
+        OSGridDistance sizeX = 1000;
+        OSGridDistance sizeY = 2000;
         OSCoordinateRegion region = OSCoordinateRegionMakeWithDistance(coord, sizeY, sizeX);
         OSGridRect gridRect = OSGridRectForCoordinateRegion(region);
 
-        double DEG2RAD = 3.1415926535 / 180.0;
+        double DEG2RAD = M_PI / 180.0;
 
         // Sanity check the region against a very approximate conversion
         XCTAssertEqualWithAccuracy(region.span.latitudeDelta * 111000, sizeY, 10.0, @"Verify latitude delta");
         XCTAssertEqualWithAccuracy(region.span.longitudeDelta * 111000 * cos(DEG2RAD * region.center.latitude), sizeX, 10.0, @"Verify latitude delta");
 
-        XCTAssertEqual((double)gridRect.size.height, sizeY, @"Verify northing span");
-        XCTAssertEqual((double)gridRect.size.width, sizeX, @"Verify easting span");
+        XCTAssertEqualWithAccuracy(gridRect.size.height, sizeY, 0.00000001, @"Verify northing span");
+        XCTAssertEqualWithAccuracy(gridRect.size.width, sizeX, 0.00000001, @"Verify easting span");
     }
 }
 
@@ -376,8 +376,8 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
         double diffSX = sizeX - gridRect.size.width;
         double diffSY = sizeY - gridRect.size.height;
         const char *stn = TEST_COORDINATES[i].station;
-        XCTAssertEqual(diffSX, 0.0, @"Span easting accuracy %s", stn);
-        XCTAssertEqual(diffSY, 0.0, @"Span northing accuracy %s", stn);
+        XCTAssertEqualWithAccuracy(diffSX, 0.0, 0.00000001, @"Span easting accuracy %s", stn);
+        XCTAssertEqualWithAccuracy(diffSY, 0.0, 0.00000001, @"Span northing accuracy %s", stn);
     }
 }
 
@@ -532,8 +532,7 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
                 if (nzeroes && OSGridPointIsValid(p2)) {
                     // This test isn't valid when nzeroes is 0 (it compares "SK" against
                     // "SK  ").
-                    XCTAssertEqualObjects(normalizedGridRef, NSStringFromOSGridPoint(p2, nzeroes),
-                                          @"It should round-trip correctly if the grid point is valid");
+                    XCTAssertEqualObjects(normalizedGridRef, NSStringFromOSGridPoint(p2, nzeroes), @"It should round-trip correctly if the grid point is valid");
                 }
 
                 p2 = OSGridPointFromString([NSString stringWithFormat:@"%@ %@%@", letters, zeroes[nzeroes], zeroes[nzeroes]], &ndigs);
@@ -636,6 +635,24 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     XCTAssertTrue(gr.originSW.northing == 200, @"Northing");
     XCTAssertTrue(gr.size.width == 50, @"Width");
     XCTAssertTrue(gr.size.height == 50, @"Height");
+}
+
+- (void)testOSGridRectIntersectsRect {
+    OSGridRect gr = OSGridRectMake(100, 200, 300, 400);
+    OSGridRect gr2 = OSGridRectMake(150, 200, 50, 50);
+    XCTAssertTrue(OSGridRectIntersectsRect(gr, gr2));
+    OSGridRect gr3 = OSGridRectMake(50, 200, 50, 50);
+    XCTAssertFalse(OSGridRectIntersectsRect(gr, gr3));
+    OSGridRect gr4 = OSGridRectMake(100, 150, 50, 50);
+    XCTAssertFalse(OSGridRectIntersectsRect(gr, gr4));
+    OSGridRect gr5 = OSGridRectMake(100, 151, 50, 50);
+    XCTAssertTrue(OSGridRectIntersectsRect(gr, gr5));
+    OSGridRect gr6 = OSGridRectMake(51, 200, 50, 50);
+    XCTAssertTrue(OSGridRectIntersectsRect(gr, gr6));
+    OSGridRect gr7 = OSGridRectMake(400, 200, 50, 50);
+    XCTAssertFalse(OSGridRectIntersectsRect(gr, gr7));
+    OSGridRect gr8 = OSGridRectMake(100, 600, 50, 50);
+    XCTAssertFalse(OSGridRectIntersectsRect(gr, gr8));
 }
 
 @end
