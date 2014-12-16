@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B3A4696A1A4097CC0007B82C /* OSGridPointConversionBuildUniversal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSGridPointConversionBuildUniversal" */;
+			buildPhases = (
+				B3A469701A4097D50007B82C /* ShellScript */,
+			);
+			dependencies = (
+				B3A4696F1A4097D20007B82C /* PBXTargetDependency */,
+			);
+			name = OSGridPointConversionBuildUniversal;
+			productName = OSGridPointConversionBuildUniversal;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B360D4781A3862F500F537F9 /* OSGridPointConversion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */; };
@@ -23,6 +38,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		B360D4791A3862F500F537F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B360D4631A3862F500F537F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B360D46B1A3862F500F537F9;
+			remoteInfo = OSGridPointConversion;
+		};
+		B3A4696E1A4097D20007B82C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B360D4631A3862F500F537F9 /* Project object */;
 			proxyType = 1;
@@ -208,6 +230,9 @@
 					B360D4761A3862F500F537F9 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					B3A4696A1A4097CC0007B82C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSGridPointConversion" */;
@@ -224,6 +249,7 @@
 			targets = (
 				B360D46B1A3862F500F537F9 /* OSGridPointConversion */,
 				B360D4761A3862F500F537F9 /* OSGridPointConversionTests */,
+				B3A4696A1A4097CC0007B82C /* OSGridPointConversionBuildUniversal */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +270,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B3A469701A4097D50007B82C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n# This script builds the framework for both the simulator and the device, and then combines\n# them into one binary using lipo.\n#\n# On build success, the result is placed into the project folder, and finder will open to\n# that location for convenient access to the newly built framework.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 4. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}/build\"\n\n# Step 5. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}/build\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B360D4671A3862F500F537F9 /* Sources */ = {
@@ -271,6 +314,11 @@
 			isa = PBXTargetDependency;
 			target = B360D46B1A3862F500F537F9 /* OSGridPointConversion */;
 			targetProxy = B360D4791A3862F500F537F9 /* PBXContainerItemProxy */;
+		};
+		B3A4696F1A4097D20007B82C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B360D46B1A3862F500F537F9 /* OSGridPointConversion */;
+			targetProxy = B3A4696E1A4097D20007B82C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -427,6 +475,20 @@
 			};
 			name = Release;
 		};
+		B3A4696B1A4097CC0007B82C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3A4696C1A4097CC0007B82C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -456,6 +518,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSGridPointConversionBuildUniversal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A4696B1A4097CC0007B82C /* Debug */,
+				B3A4696C1A4097CC0007B82C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B33986BE1A39E842000B6099"
+               BlueprintIdentifier = "B3A4696A1A4097CC0007B82C"
                BuildableName = "OSGridPointConversionBuildUniversal"
                BlueprintName = "OSGridPointConversionBuildUniversal"
                ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B33986BE1A39E842000B6099"
+            BlueprintIdentifier = "B3A4696A1A4097CC0007B82C"
             BuildableName = "OSGridPointConversionBuildUniversal"
             BlueprintName = "OSGridPointConversionBuildUniversal"
             ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
@@ -60,7 +60,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B33986BE1A39E842000B6099"
+            BlueprintIdentifier = "B3A4696A1A4097CC0007B82C"
             BuildableName = "OSGridPointConversionBuildUniversal"
             BlueprintName = "OSGridPointConversionBuildUniversal"
             ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
