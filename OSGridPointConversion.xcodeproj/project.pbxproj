@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */; };
 		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B360D4781A3862F500F537F9 /* OSGridPointConversion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */; };
 		B360D47F1A3862F500F537F9 /* OSGridPointConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSValue+OSGridPoint.h"; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
+		72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSValue+OSGridPoint.m"; path = "NSValue+OSGridPoint.m"; sourceTree = "<group>"; };
 		B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSGridPointConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B360D4701A3862F500F537F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B360D4711A3862F500F537F9 /* OSGridPointConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSGridPointConversion.h; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				B372FA821A3865A70067FEA9 /* RMFoundation.h */,
 				B372FA811A3865A70067FEA9 /* RMFoundation.c */,
 				B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */,
+				72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */,
+				72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */,
 				B372FA911A386F8B0067FEA9 /* Proj4 */,
 				B360D46F1A3862F500F537F9 /* Supporting Files */,
 			);
@@ -171,6 +177,7 @@
 				B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */,
 				B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */,
 				B372FA7F1A38658B0067FEA9 /* RMProjection.h in Headers */,
+				72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */,
 				B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */,
 				B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */,
 			);
@@ -296,6 +303,7 @@
 				B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */,
 				B372FA831A3865A70067FEA9 /* RMFoundation.c in Sources */,
 				B372FA801A38658B0067FEA9 /* RMProjection.m in Sources */,
+				72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +534,7 @@
 				B3A4696C1A4097CC0007B82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
