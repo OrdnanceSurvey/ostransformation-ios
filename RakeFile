@@ -58,31 +58,3 @@ task :analyze do |t|
   builder = BuildHelper.new "OSGridPointConversion", IS_WORKSPACE
   fail "** STATIC ANALYSIS HAS ISSUES **".red unless builder.analyze
 end
-
-=begin
-==The following do not apply to framework projects==
-desc 'Builds and archives the app'
-task :archive do |t|
-  puts '=== BUILD ==='.cyan
-  builder = BuildHelper.new "OSOAuth", IS_WORKSPACE
-  builder.archive
-end
-
-desc 'Shows the current version'
-task :show_version do |t|
-  builder = BuildHelper.new "OSOAuth", IS_WORKSPACE
-  builder.show_versions
-end
-
-desc 'Bumps the version number'
-task :bump do |t|
-  builder = BuildHelper.new "OSOAuth", IS_WORKSPACE
-  builder.bump_version
-end
-
-desc 'Updates the marketing version number'
-task :new_marketing_version, :version do |t, args|
-  builder = BuildHelper.new "OSOAuth", IS_WORKSPACE
-  builder.new_marketing_version args[:version]
-end
-=end
