@@ -31,9 +31,9 @@
 #define kMaxLong 180.0
 #define kMaxLat 90.0
 
-static const double kRMMinLatitude = -kMaxLat;
-static const double kRMMaxLatitude = kMaxLat;
-static const double kRMMinLongitude = -kMaxLong;
-static const double kRMMaxLongitude = kMaxLong;
+static const double kOSRMMinLatitude = -kMaxLat;
+static const double kOSRMMaxLatitude = kMaxLat;
+static const double kOSRMMinLongitude = -kMaxLong;
+static const double kOSRMMaxLongitude = kMaxLong;
 
 #endif

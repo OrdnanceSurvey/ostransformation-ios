@@ -29,11 +29,11 @@
 #import <math.h>
 #import <stdio.h>
 
-bool RMProjectedPointEqualToProjectedPoint(RMProjectedPoint point1, RMProjectedPoint point2) {
+bool OSRMProjectedPointEqualToProjectedPoint(OSRMProjectedPoint point1, OSRMProjectedPoint point2) {
     return point1.x == point2.x && point2.y == point2.y;
 }
 
-bool RMProjectedRectIntersectsProjectedRect(RMProjectedRect rect1, RMProjectedRect rect2) {
+bool OSRMProjectedRectIntersectsProjectedRect(OSRMProjectedRect rect1, OSRMProjectedRect rect2) {
     double minX1 = rect1.origin.x;
     double maxX1 = rect1.origin.x + rect1.size.width;
     double minY1 = rect1.origin.y;
@@ -48,7 +48,7 @@ bool RMProjectedRectIntersectsProjectedRect(RMProjectedRect rect1, RMProjectedRe
            ((minY1 <= minY2 && minY2 <= maxY1) || (minY2 <= minY1 && minY1 <= maxY2));
 }
 
-bool RMProjectedRectContainsProjectedRect(RMProjectedRect rect1, RMProjectedRect rect2) {
+bool OSRMProjectedRectContainsProjectedRect(OSRMProjectedRect rect1, OSRMProjectedRect rect2) {
     double minX1 = rect1.origin.x;
     double maxX1 = rect1.origin.x + rect1.size.width;
     double minY1 = rect1.origin.y;
@@ -62,7 +62,7 @@ bool RMProjectedRectContainsProjectedRect(RMProjectedRect rect1, RMProjectedRect
     return ((minX2 >= minX1 && maxX2 <= maxX1) && (minY2 >= minY1 && maxY2 <= maxY1));
 }
 
-bool RMProjectedRectContainsProjectedPoint(RMProjectedRect rect, RMProjectedPoint point) {
+bool OSRMProjectedRectContainsProjectedPoint(OSRMProjectedRect rect, OSRMProjectedPoint point) {
     if (rect.origin.x > point.x || rect.origin.x + rect.size.width < point.x || rect.origin.y > point.y || rect.origin.y + rect.size.height < point.y) {
         return false;
     }
@@ -70,61 +70,61 @@ bool RMProjectedRectContainsProjectedPoint(RMProjectedRect rect, RMProjectedPoin
     return true;
 }
 
-bool RMProjectedSizeContainsProjectedSize(RMProjectedSize size1, RMProjectedSize size2) {
+bool OSRMProjectedSizeContainsProjectedSize(OSRMProjectedSize size1, OSRMProjectedSize size2) {
     return (size1.width >= size2.width && size1.height >= size2.height);
 }
 
-RMProjectedPoint RMScaleProjectedPointAboutPoint(RMProjectedPoint point, float factor, RMProjectedPoint pivot) {
+OSRMProjectedPoint OSRMScaleProjectedPointAboutPoint(OSRMProjectedPoint point, float factor, OSRMProjectedPoint pivot) {
     point.x = (point.x - pivot.x) * factor + pivot.x;
     point.y = (point.y - pivot.y) * factor + pivot.y;
 
     return point;
 }
 
-RMProjectedRect RMScaleProjectedRectAboutPoint(RMProjectedRect rect, float factor, RMProjectedPoint pivot) {
-    rect.origin = RMScaleProjectedPointAboutPoint(rect.origin, factor, pivot);
+OSRMProjectedRect OSRMScaleProjectedRectAboutPoint(OSRMProjectedRect rect, float factor, OSRMProjectedPoint pivot) {
+    rect.origin = OSRMScaleProjectedPointAboutPoint(rect.origin, factor, pivot);
     rect.size.width *= factor;
     rect.size.height *= factor;
 
     return rect;
 }
 
-RMProjectedPoint RMTranslateProjectedPointBy(RMProjectedPoint point, RMProjectedSize delta) {
+OSRMProjectedPoint OSRMTranslateProjectedPointBy(OSRMProjectedPoint point, OSRMProjectedSize delta) {
     point.x += delta.width;
     point.y += delta.height;
 
     return point;
 }
 
-RMProjectedRect RMTranslateProjectedRectBy(RMProjectedRect rect, RMProjectedSize delta) {
-    rect.origin = RMTranslateProjectedPointBy(rect.origin, delta);
+OSRMProjectedRect OSRMTranslateProjectedRectBy(OSRMProjectedRect rect, OSRMProjectedSize delta) {
+    rect.origin = OSRMTranslateProjectedPointBy(rect.origin, delta);
 
     return rect;
 }
 
-RMProjectedPoint RMProjectedPointMake(double x, double y) {
-    RMProjectedPoint point = {x, y};
+OSRMProjectedPoint OSRMProjectedPointMake(double x, double y) {
+    OSRMProjectedPoint point = {x, y};
 
     return point;
 }
 
-RMProjectedRect RMProjectedRectMake(double x, double y, double width, double height) {
-    RMProjectedRect rect = {{x, y}, {width, height}};
+OSRMProjectedRect OSRMProjectedRectMake(double x, double y, double width, double height) {
+    OSRMProjectedRect rect = {{x, y}, {width, height}};
 
     return rect;
 }
 
-RMProjectedSize RMProjectedSizeMake(double width, double heigth) {
-    RMProjectedSize size = {width, heigth};
+OSRMProjectedSize OSRMProjectedSizeMake(double width, double heigth) {
+    OSRMProjectedSize size = {width, heigth};
 
     return size;
 }
 
-RMProjectedRect RMProjectedRectZero() {
-    return RMProjectedRectMake(0.0, 0.0, 0.0, 0.0);
+OSRMProjectedRect OSRMProjectedRectZero() {
+    return OSRMProjectedRectMake(0.0, 0.0, 0.0, 0.0);
 }
 
-bool RMProjectedRectIsZero(RMProjectedRect rect) {
+bool OSRMProjectedRectIsZero(OSRMProjectedRect rect) {
     return (rect.origin.x == 0.0) && (rect.origin.y == 0.0) && (rect.size.width == 0.0) && (rect.size.height == 0.0);
 }
 
@@ -136,12 +136,12 @@ bool RMProjectedRectIsZero(RMProjectedRect rect) {
 #define RMMAX(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
-RMProjectedRect RMProjectedRectUnion(RMProjectedRect rect1, RMProjectedRect rect2) {
-    bool rect1IsZero = RMProjectedRectIsZero(rect1);
-    bool rect2IsZero = RMProjectedRectIsZero(rect2);
+OSRMProjectedRect OSRMProjectedRectUnion(OSRMProjectedRect rect1, OSRMProjectedRect rect2) {
+    bool rect1IsZero = OSRMProjectedRectIsZero(rect1);
+    bool rect2IsZero = OSRMProjectedRectIsZero(rect2);
 
     if (rect1IsZero)
-        return (rect2IsZero ? RMProjectedRectZero() : rect2);
+        return (rect2IsZero ? OSRMProjectedRectZero() : rect2);
 
     if (rect2IsZero)
         return rect1;
@@ -151,12 +151,12 @@ RMProjectedRect RMProjectedRectUnion(RMProjectedRect rect1, RMProjectedRect rect
     double maxX = RMMAX(rect1.origin.x + rect1.size.width, rect2.origin.x + rect2.size.width);
     double maxY = RMMAX(rect1.origin.y + rect2.size.height, rect2.origin.y + rect2.size.height);
 
-    return RMProjectedRectMake(minX, minY, maxX - minX, maxY - minY);
+    return OSRMProjectedRectMake(minX, minY, maxX - minX, maxY - minY);
 }
 
 // apparently, this doesn't work well with coordinates on a sphere, but it might
 // be appropriate for a quick estimation
-double RMEuclideanDistanceBetweenProjectedPoints(RMProjectedPoint point1, RMProjectedPoint point2) {
+double OSRMEuclideanDistanceBetweenProjectedPoints(OSRMProjectedPoint point1, OSRMProjectedPoint point2) {
     double xd = point2.x - point1.x;
     double yd = point2.y - point1.y;
 
@@ -165,10 +165,10 @@ double RMEuclideanDistanceBetweenProjectedPoints(RMProjectedPoint point1, RMProj
 
 #pragma mark -
 
-void RMLogProjectedPoint(RMProjectedPoint point) {
+void OSRMLogProjectedPoint(OSRMProjectedPoint point) {
     printf("ProjectedPoint at (%.0f,%.0f)\n", point.x, point.y);
 }
 
-void RMLogProjectedRect(RMProjectedRect rect) {
+void OSRMLogProjectedRect(OSRMProjectedRect rect) {
     printf("ProjectedRect at (%.0f,%.0f), size (%.0f,%.0f)\n", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
 }

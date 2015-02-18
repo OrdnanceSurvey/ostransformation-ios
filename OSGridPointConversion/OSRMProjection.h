@@ -31,32 +31,32 @@
 #import "RMFoundation.h"
 
 // Objective-C wrapper for PROJ4 map projection definitions.
-@interface RMProjection : NSObject
+@interface OSRMProjection : NSObject
 
 @property (nonatomic, readonly) void *internalProjection;
-@property (nonatomic, readonly) RMProjectedRect planetBounds;
+@property (nonatomic, readonly) OSRMProjectedRect planetBounds;
 @property (nonatomic, assign) bool projectionWrapsHorizontally;
 @property (nonatomic, assign) bool latLngIsWGS84;
 
 // If #projectionWrapsHorizontally, returns #aPoint with its easting adjusted
 // modulo Earth's diameter to be within projection's planetBounds. if
 // !#projectionWrapsHorizontally, returns #aPoint unchanged.
-- (RMProjectedPoint)wrapPointHorizontally:(RMProjectedPoint)aPoint;
+- (OSRMProjectedPoint)wrapPointHorizontally:(OSRMProjectedPoint)aPoint;
 
 // applies #wrapPointHorizontally to aPoint, and then clamps northing (Y
 // coordinate) to projection's planetBounds
-- (RMProjectedPoint)constrainPointToBounds:(RMProjectedPoint)aPoint;
+- (OSRMProjectedPoint)constrainPointToBounds:(OSRMProjectedPoint)aPoint;
 
-+ (RMProjection *)googleProjection;
-+ (RMProjection *)WGS84LatLong;
-+ (RMProjection *)OSGB36NationalGrid;
++ (OSRMProjection *)googleProjection;
++ (OSRMProjection *)WGS84LatLong;
++ (OSRMProjection *)OSGB36NationalGrid;
 
-- (id)initWithString:(NSString *)proj4String inBounds:(RMProjectedRect)projectedBounds;
+- (id)initWithString:(NSString *)proj4String inBounds:(OSRMProjectedRect)projectedBounds;
 
 // inverse project meters, return latitude/longitude
-- (CLLocationCoordinate2D)projectedPointToCoordinate:(RMProjectedPoint)aPoint;
+- (CLLocationCoordinate2D)projectedPointToCoordinate:(OSRMProjectedPoint)aPoint;
 
 // forward project latitude/longitude, return meters
-- (RMProjectedPoint)coordinateToProjectedPoint:(CLLocationCoordinate2D)aLatLong;
+- (OSRMProjectedPoint)coordinateToProjectedPoint:(CLLocationCoordinate2D)aLatLong;
 
 @end
