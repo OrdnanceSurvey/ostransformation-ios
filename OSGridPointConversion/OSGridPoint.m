@@ -112,7 +112,7 @@
 // SOFTWARE.
 
 #import "OSGridPoint.h"
-#import "RMProjection.h"
+#import "OSRMProjection.h"
 
 #pragma mark validity
 
@@ -140,7 +140,7 @@ OSGridPoint OSGridPointForCoordinate(CLLocationCoordinate2D coordinate) {
         return OSGridPointInvalid;
     }
 
-    RMProjectedPoint p = [[RMProjection OSGB36NationalGrid] coordinateToProjectedPoint:coordinate];
+    OSRMProjectedPoint p = [[OSRMProjection OSGB36NationalGrid] coordinateToProjectedPoint:coordinate];
     return (OSGridPoint){p.x, p.y};
 }
 
@@ -149,7 +149,7 @@ CLLocationCoordinate2D OSCoordinateForGridPoint(OSGridPoint gridPoint) {
         return kCLLocationCoordinate2DInvalid;
     }
 
-    return [[RMProjection OSGB36NationalGrid] projectedPointToCoordinate:(RMProjectedPoint){gridPoint.easting, gridPoint.northing}];
+    return [[OSRMProjection OSGB36NationalGrid] projectedPointToCoordinate:(OSRMProjectedPoint){gridPoint.easting, gridPoint.northing}];
 }
 
 OSGridDistance OSMetersBetweenGridPoints(OSGridPoint gp1, OSGridPoint gp2) {

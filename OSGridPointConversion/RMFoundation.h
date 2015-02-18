@@ -36,18 +36,18 @@
 
 /*! \struct RMProjectedPoint
  \brief coordinates, in projected meters, paralleling CGPoint */
-typedef struct { double x, y; } RMProjectedPoint;
+typedef struct { double x, y; } OSRMProjectedPoint;
 
 /*! \struct RMProjectedSize
  \brief width/height struct, in projected meters, paralleling CGSize */
-typedef struct { double width, height; } RMProjectedSize;
+typedef struct { double width, height; } OSRMProjectedSize;
 
 /*! \struct RMProjectedRect
  \brief location and size, in projected meters, paralleling CGRect */
 typedef struct {
-    RMProjectedPoint origin;
-    RMProjectedSize size;
-} RMProjectedRect;
+    OSRMProjectedPoint origin;
+    OSRMProjectedSize size;
+} OSRMProjectedRect;
 
 #if __OBJC__
 /*! \struct RMSphericalTrapezium
@@ -55,45 +55,45 @@ typedef struct {
 typedef struct {
     CLLocationCoordinate2D southWest;
     CLLocationCoordinate2D northEast;
-} RMSphericalTrapezium;
+} OSRMSphericalTrapezium;
 #endif
 
 #pragma mark -
 
-RMProjectedPoint RMScaleProjectedPointAboutPoint(RMProjectedPoint point, float factor, RMProjectedPoint pivot);
-RMProjectedRect RMScaleProjectedRectAboutPoint(RMProjectedRect rect, float factor, RMProjectedPoint pivot);
-RMProjectedPoint RMTranslateProjectedPointBy(RMProjectedPoint point, RMProjectedSize delta);
-RMProjectedRect RMTranslateProjectedRectBy(RMProjectedRect rect, RMProjectedSize delta);
+OSRMProjectedPoint OSRMScaleProjectedPointAboutPoint(OSRMProjectedPoint point, float factor, OSRMProjectedPoint pivot);
+OSRMProjectedRect OSRMScaleProjectedRectAboutPoint(OSRMProjectedRect rect, float factor, OSRMProjectedPoint pivot);
+OSRMProjectedPoint OSRMTranslateProjectedPointBy(OSRMProjectedPoint point, OSRMProjectedSize delta);
+OSRMProjectedRect OSRMTranslateProjectedRectBy(OSRMProjectedRect rect, OSRMProjectedSize delta);
 
 #pragma mark -
 
-bool RMProjectedPointEqualToProjectedPoint(RMProjectedPoint point1, RMProjectedPoint point2);
+bool OSRMProjectedPointEqualToProjectedPoint(OSRMProjectedPoint point1, OSRMProjectedPoint point2);
 
-bool RMProjectedRectIntersectsProjectedRect(RMProjectedRect rect1, RMProjectedRect rect2);
-bool RMProjectedRectContainsProjectedRect(RMProjectedRect rect1, RMProjectedRect rect2);
-bool RMProjectedRectContainsProjectedPoint(RMProjectedRect rect, RMProjectedPoint point);
+bool OSRMProjectedRectIntersectsProjectedRect(OSRMProjectedRect rect1, OSRMProjectedRect rect2);
+bool OSRMProjectedRectContainsProjectedRect(OSRMProjectedRect rect1, OSRMProjectedRect rect2);
+bool OSRMProjectedRectContainsProjectedPoint(OSRMProjectedRect rect, OSRMProjectedPoint point);
 
-bool RMProjectedSizeContainsProjectedSize(RMProjectedSize size1, RMProjectedSize size2);
+bool OSRMProjectedSizeContainsProjectedSize(OSRMProjectedSize size1, OSRMProjectedSize size2);
 
 #pragma mark -
 
 // Union of two rectangles
-RMProjectedRect RMProjectedRectUnion(RMProjectedRect rect1, RMProjectedRect rect2);
+OSRMProjectedRect OSRMProjectedRectUnion(OSRMProjectedRect rect1, OSRMProjectedRect rect2);
 
-RMProjectedPoint RMProjectedPointMake(double x, double y);
-RMProjectedRect RMProjectedRectMake(double x, double y, double width, double height);
-RMProjectedSize RMProjectedSizeMake(double width, double heigth);
+OSRMProjectedPoint OSRMProjectedPointMake(double x, double y);
+OSRMProjectedRect OSRMProjectedRectMake(double x, double y, double width, double height);
+OSRMProjectedSize OSRMProjectedSizeMake(double width, double heigth);
 
-RMProjectedRect RMProjectedRectZero();
-bool RMProjectedRectIsZero(RMProjectedRect rect);
-
-#pragma mark -
-
-double RMEuclideanDistanceBetweenProjectedPoints(RMProjectedPoint point1, RMProjectedPoint point2);
+OSRMProjectedRect OSRMProjectedRectZero();
+bool OSRMProjectedRectIsZero(OSRMProjectedRect rect);
 
 #pragma mark -
 
-void RMLogProjectedPoint(RMProjectedPoint point);
-void RMLogProjectedRect(RMProjectedRect rect);
+double OSRMEuclideanDistanceBetweenProjectedPoints(OSRMProjectedPoint point1, OSRMProjectedPoint point2);
+
+#pragma mark -
+
+void OSRMLogProjectedPoint(OSRMProjectedPoint point);
+void OSRMLogProjectedRect(OSRMProjectedRect rect);
 
 #endif
