@@ -173,10 +173,18 @@ NSString *NSStringFromOSGridPoint(OSGridPoint point, NSInteger digitsPerDimensio
 
 OSGridPoint OSGridPointFromString(NSString *gridRef, NSInteger *outDigits);
 
+static inline OSGridPoint OSGridPointMake(OSGridDistance easting, OSGridDistance northing) {
+    OSGridPoint point;
+    point.easting = easting;
+    point.northing = northing;
+    return point;
+}
+
 static inline bool OSGridPointEqualToPoint(OSGridPoint p1, OSGridPoint p2) {
     return (p1.easting == p2.easting && p1.northing == p2.northing);
 }
 
+extern OSGridPoint const OSGridPointZero;
 extern OSGridPoint const OSGridPointInvalid;
 
 static inline bool OSGridPointIsValid(OSGridPoint p) {
