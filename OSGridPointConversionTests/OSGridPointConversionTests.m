@@ -182,6 +182,16 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
 
 @implementation OSGridPointCoversionTests
 
+- (void)testItIsPossibleToMakeAValidGridPoint {
+    OSGridDistance easting = 600;
+    OSGridDistance northing = 400;
+
+    OSGridPoint testPoint = OSGridPointMake(easting, northing);
+    XCTAssertTrue(OSGridPointIsValid(testPoint), @"Grid point should be valid.");
+    XCTAssertEqual(testPoint.easting, easting, @"Eastings should be equal.");
+    XCTAssertEqual(testPoint.northing, northing, @"Northings should be equal.");
+}
+
 - (void)testLatLngToOSGridPoint {
     double sumX = 0;
     double sumY = 0;

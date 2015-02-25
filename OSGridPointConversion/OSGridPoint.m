@@ -117,6 +117,7 @@
 #pragma mark validity
 
 OSGridPoint const OSGridPointInvalid = {-INFINITY, -INFINITY};
+OSGridPoint const OSGridPointZero = {0, 0};
 OSGridRect const OSNationalGridBounds = {{0, 0}, {OSGridWidth, OSGridHeight}};
 OSGridRect const OSGridRectNull = {{-INFINITY, -INFINITY}, {0, 0}};
 
