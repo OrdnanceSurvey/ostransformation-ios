@@ -28,6 +28,7 @@
 #import "RMGlobalConstants.h"
 #import "proj_api.h"
 #import "OSRMProjection.h"
+#import "OSGridPoint.h"
 
 @implementation OSRMProjection {
     // The internal projection that has been setup
@@ -104,12 +105,15 @@
 
 - (OSRMProjectedPoint)coordinateToProjectedPoint:(CLLocationCoordinate2D)aLatLong {
     projUV uv = {aLatLong.longitude * DEG_TO_RAD, aLatLong.latitude * DEG_TO_RAD};
-
+    int projErrorCode = 0;
     projUV result;
     if (self.latLngIsWGS84) {
         result = pj_fwd(uv, _internalProjection);
     } else {
-        pj_transform([[self class] WGS84LatLong]->_internalProjection, self.internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+        projErrorCode = pj_transform([[self class] WGS84LatLong]->_internalProjection, self.internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+        if (projErrorCode != 0) {
+            NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+        }
         result = uv;
     }
 
@@ -125,11 +129,15 @@
         aPoint.x, aPoint.y,
     };
 
+    int projErrorCode = 0;
     projUV result;
     if (self.latLngIsWGS84) {
         result = pj_inv(uv, self.internalProjection);
     } else {
-        pj_transform(_internalProjection, [[self class] WGS84LatLong]->_internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+        projErrorCode = pj_transform(_internalProjection, [[self class] WGS84LatLong]->_internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+        if (projErrorCode != 0) {
+            NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+        }
         result = uv;
     }
 
@@ -150,9 +158,8 @@
         OSRMProjectedRect theBounds = OSRMProjectedRectMake(-20037508.34, -20037508.34, 20037508.34 * 2, 20037508.34 * 2);
 
         _googleProjection =
-            [[OSRMProjection alloc] initWithString:@"+title= Google Mercator EPSG:900913 +proj=merc " @"+a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 "
-                                  @"+x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null " @"+datum=WGS84 +no_defs"
-                                        inBounds:theBounds];
+            [[OSRMProjection alloc] initWithString:@"+title= Google Mercator EPSG:900913 +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +datum=WGS84 +no_defs"
+                                          inBounds:theBounds];
         return _googleProjection;
     }
 }
@@ -175,11 +182,11 @@
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        // These bounds correspond to area covered by the OV0/OV1/OV2 map
-        // tilesets.
-        OSRMProjectedRect bounds = {{0, 0}, {700000, 1300000}};
+        NSString *gridShiftFilePath = [[NSBundle bundleForClass:self] pathForResource:@"OSTN02_NTv2" ofType:@"gsb"];
+        OSRMProjectedRect bounds = {{0, 0}, {OSGridWidth, OSGridHeight}};
+        NSString *projDefinitionString = [NSString stringWithFormat:@"+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +nadgrids=%@ +units=m +no_defs", gridShiftFilePath];
         proj = [[OSRMProjection alloc]
-            initWithString:@"+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 " @"+x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 " @"+units=m +no_defs"
+            initWithString:projDefinitionString
                   inBounds:bounds];
     });
 
