@@ -34,8 +34,9 @@
 		B372FA831A3865A70067FEA9 /* RMFoundation.c in Sources */ = {isa = PBXBuildFile; fileRef = B372FA811A3865A70067FEA9 /* RMFoundation.c */; };
 		B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA821A3865A70067FEA9 /* RMFoundation.h */; };
 		B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */; };
-		B372FA8E1A386AF00067FEA9 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA8D1A386AF00067FEA9 /* proj_api.h */; };
-		B372FA901A386DEB0067FEA9 /* libProj4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B372FA8F1A386DEB0067FEA9 /* libProj4.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B3C2EFE11AAE0EFA00558657 /* OSTN02_NTv2.gsb in Resources */ = {isa = PBXBuildFile; fileRef = B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */; };
+		B3C2F1381AAF127100558657 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C2F08A1AAF127100558657 /* proj_api.h */; };
+		B3C2F1441AAF1BCA00558657 /* libProj4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C2F1431AAF1BCA00558657 /* libProj4.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +72,9 @@
 		B372FA811A3865A70067FEA9 /* RMFoundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RMFoundation.c; sourceTree = "<group>"; };
 		B372FA821A3865A70067FEA9 /* RMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFoundation.h; sourceTree = "<group>"; };
 		B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
-		B372FA8D1A386AF00067FEA9 /* proj_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proj_api.h; sourceTree = "<group>"; };
-		B372FA8F1A386DEB0067FEA9 /* libProj4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProj4.a; sourceTree = "<group>"; };
+		B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */ = {isa = PBXFileReference; lastKnownFileType = file; path = OSTN02_NTv2.gsb; sourceTree = "<group>"; };
+		B3C2F08A1AAF127100558657 /* proj_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proj_api.h; sourceTree = "<group>"; };
+		B3C2F1431AAF1BCA00558657 /* libProj4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProj4.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B372FA901A386DEB0067FEA9 /* libProj4.a in Frameworks */,
+				B3C2F1441AAF1BCA00558657 /* libProj4.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +125,7 @@
 				B372FA7E1A38658B0067FEA9 /* OSRMProjection.m */,
 				B372FA821A3865A70067FEA9 /* RMFoundation.h */,
 				B372FA811A3865A70067FEA9 /* RMFoundation.c */,
+				B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */,
 				B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */,
 				72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */,
 				72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */,
@@ -160,8 +163,8 @@
 		B372FA911A386F8B0067FEA9 /* Proj4 */ = {
 			isa = PBXGroup;
 			children = (
-				B372FA8D1A386AF00067FEA9 /* proj_api.h */,
-				B372FA8F1A386DEB0067FEA9 /* libProj4.a */,
+				B3C2F08A1AAF127100558657 /* proj_api.h */,
+				B3C2F1431AAF1BCA00558657 /* libProj4.a */,
 			);
 			name = Proj4;
 			sourceTree = "<group>";
@@ -173,7 +176,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B372FA8E1A386AF00067FEA9 /* proj_api.h in Headers */,
+				B3C2F1381AAF127100558657 /* proj_api.h in Headers */,
 				B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */,
 				B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */,
 				B372FA7F1A38658B0067FEA9 /* OSRMProjection.h in Headers */,
@@ -266,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C2EFE11AAE0EFA00558657 /* OSTN02_NTv2.gsb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
