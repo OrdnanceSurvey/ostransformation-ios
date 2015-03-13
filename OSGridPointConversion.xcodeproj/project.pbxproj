@@ -29,10 +29,10 @@
 		B360D47F1A3862F500F537F9 /* OSGridPointConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */; };
 		B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA791A3865430067FEA9 /* OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7A1A3865430067FEA9 /* OSGridPoint.m */; };
-		B372FA7F1A38658B0067FEA9 /* OSRMProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA7D1A38658B0067FEA9 /* OSRMProjection.h */; };
+		B372FA7F1A38658B0067FEA9 /* OSRMProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA7D1A38658B0067FEA9 /* OSRMProjection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B372FA801A38658B0067FEA9 /* OSRMProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7E1A38658B0067FEA9 /* OSRMProjection.m */; };
-		B372FA831A3865A70067FEA9 /* RMFoundation.c in Sources */ = {isa = PBXBuildFile; fileRef = B372FA811A3865A70067FEA9 /* RMFoundation.c */; };
-		B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA821A3865A70067FEA9 /* RMFoundation.h */; };
+		B372FA831A3865A70067FEA9 /* OSRMFoundation.c in Sources */ = {isa = PBXBuildFile; fileRef = B372FA811A3865A70067FEA9 /* OSRMFoundation.c */; };
+		B372FA841A3865A70067FEA9 /* OSRMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA821A3865A70067FEA9 /* OSRMFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */; };
 		B3C2EFE11AAE0EFA00558657 /* OSTN02_NTv2.gsb in Resources */ = {isa = PBXBuildFile; fileRef = B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */; };
 		B3C2F1381AAF127100558657 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C2F08A1AAF127100558657 /* proj_api.h */; };
@@ -69,8 +69,8 @@
 		B372FA7A1A3865430067FEA9 /* OSGridPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSGridPoint.m; sourceTree = "<group>"; };
 		B372FA7D1A38658B0067FEA9 /* OSRMProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSRMProjection.h; sourceTree = "<group>"; };
 		B372FA7E1A38658B0067FEA9 /* OSRMProjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSRMProjection.m; sourceTree = "<group>"; };
-		B372FA811A3865A70067FEA9 /* RMFoundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RMFoundation.c; sourceTree = "<group>"; };
-		B372FA821A3865A70067FEA9 /* RMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFoundation.h; sourceTree = "<group>"; };
+		B372FA811A3865A70067FEA9 /* OSRMFoundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OSRMFoundation.c; sourceTree = "<group>"; };
+		B372FA821A3865A70067FEA9 /* OSRMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSRMFoundation.h; sourceTree = "<group>"; };
 		B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
 		B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */ = {isa = PBXFileReference; lastKnownFileType = file; path = OSTN02_NTv2.gsb; sourceTree = "<group>"; };
 		B3C2F08A1AAF127100558657 /* proj_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proj_api.h; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 				B372FA7A1A3865430067FEA9 /* OSGridPoint.m */,
 				B372FA7D1A38658B0067FEA9 /* OSRMProjection.h */,
 				B372FA7E1A38658B0067FEA9 /* OSRMProjection.m */,
-				B372FA821A3865A70067FEA9 /* RMFoundation.h */,
-				B372FA811A3865A70067FEA9 /* RMFoundation.c */,
+				B372FA821A3865A70067FEA9 /* OSRMFoundation.h */,
+				B372FA811A3865A70067FEA9 /* OSRMFoundation.c */,
 				B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */,
 				B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */,
 				72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */,
@@ -180,8 +180,8 @@
 				B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */,
 				B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */,
 				B372FA7F1A38658B0067FEA9 /* OSRMProjection.h in Headers */,
+				B372FA841A3865A70067FEA9 /* OSRMFoundation.h in Headers */,
 				72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */,
-				B372FA841A3865A70067FEA9 /* RMFoundation.h in Headers */,
 				B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */,
-				B372FA831A3865A70067FEA9 /* RMFoundation.c in Sources */,
+				B372FA831A3865A70067FEA9 /* OSRMFoundation.c in Sources */,
 				B372FA801A38658B0067FEA9 /* OSRMProjection.m in Sources */,
 				72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */,
 			);

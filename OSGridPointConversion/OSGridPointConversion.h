@@ -120,3 +120,5 @@ FOUNDATION_EXPORT const unsigned char OSGridPointConversionVersionString[];
 
 #import <OSGridPointConversion/OSGridPoint.h>
 #import <OSGridPointConversion/NSValue+OSGridPoint.h>
+#import <OSGridPointConversion/OSRMProjection.h>
+#import <OSGridPointConversion/OSRMFoundation.h>

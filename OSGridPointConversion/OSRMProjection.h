@@ -28,7 +28,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "RMFoundation.h"
+#import "OSRMFoundation.h"
 
 // Objective-C wrapper for PROJ4 map projection definitions.
 @interface OSRMProjection : NSObject
