@@ -698,4 +698,21 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     XCTAssertEqualWithAccuracy(bbox.topRight.longitude, topRight.longitude, 0.01, @"Top right longitude");
 }
 
+- (void)testOSBoundingBoxEqualToBox {
+    CLLocationCoordinate2D bottomLeft = CLLocationCoordinate2DMake(57.8135184216667, -8.57854461027778);
+    CLLocationCoordinate2D topRight = CLLocationCoordinate2DMake(58.7210828644444, -3.13788287305556);
+    OSBoundingBox b1 = OSBoundingBoxMake(topRight, bottomLeft);
+    OSBoundingBox b2 = OSBoundingBoxMake(bottomLeft, topRight);
+    XCTAssertTrue(OSBoundingBoxEqualToBox(b1, b1));
+    XCTAssertFalse(OSBoundingBoxEqualToBox(b1, b2));
+
+    topRight = CLLocationCoordinate2DMake(57.8135184216667, -3.13788287305556);
+    b1 = OSBoundingBoxMake(topRight, bottomLeft);
+    XCTAssertFalse(OSBoundingBoxEqualToBox(b1, b2));
+
+    topRight = CLLocationCoordinate2DMake(58.7210828644444, -8.57854461027778);
+    b1 = OSBoundingBoxMake(topRight, bottomLeft);
+    XCTAssertFalse(OSBoundingBoxEqualToBox(b1, b2));
+}
+
 @end

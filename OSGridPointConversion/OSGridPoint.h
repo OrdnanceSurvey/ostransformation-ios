@@ -295,6 +295,10 @@ OSBoundingBoxMake(CLLocationCoordinate2D bottomLeft, CLLocationCoordinate2D topR
     return p;
 }
 
+static inline bool OSBoundingBoxEqualToBox(OSBoundingBox b1, OSBoundingBox b2) {
+    return (b1.bottomLeft.latitude == b2.bottomLeft.latitude) && (b1.bottomLeft.longitude == b2.bottomLeft.longitude) && (b1.topRight.latitude == b2.topRight.latitude) && (b1.topRight.longitude == b2.topRight.longitude);
+}
+
 /**
  *  Returns gridrect for bounding box. This method will return OSGridRectNull if bounding box in invalid.
  *
