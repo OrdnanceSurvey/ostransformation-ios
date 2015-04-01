@@ -280,3 +280,17 @@ OSGridRect OSGridRectForCoordinateRegion(OSCoordinateRegion region);
 OSCoordinateRegion OSCoordinateRegionForGridRect(OSGridRect gridRect);
 
 OSCoordinateRegion OSCoordinateRegionMakeWithDistance(CLLocationCoordinate2D centerCoordinate, CLLocationDistance latitudinalMeters, CLLocationDistance longitudinalMeters);
+
+struct OSBoundingBox {
+    CLLocationCoordinate2D bottomLeft;
+    CLLocationCoordinate2D topRight;
+};
+typedef struct OSBoundingBox OSBoundingBox;
+
+static inline OSBoundingBox
+OSBoundingBoxMake(CLLocationCoordinate2D bottomLeft, CLLocationCoordinate2D topRight) {
+    OSBoundingBox p;
+    p.bottomLeft = bottomLeft;
+    p.topRight = topRight;
+    return p;
+}
