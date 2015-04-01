@@ -294,3 +294,27 @@ OSBoundingBoxMake(CLLocationCoordinate2D bottomLeft, CLLocationCoordinate2D topR
     p.topRight = topRight;
     return p;
 }
+
+static inline bool OSBoundingBoxEqualToBox(OSBoundingBox b1, OSBoundingBox b2) {
+    return (b1.bottomLeft.latitude == b2.bottomLeft.latitude) && (b1.bottomLeft.longitude == b2.bottomLeft.longitude) && (b1.topRight.latitude == b2.topRight.latitude) && (b1.topRight.longitude == b2.topRight.longitude);
+}
+
+/**
+ *  Returns gridrect for bounding box. This method will return OSGridRectNull if bounding box in invalid.
+ *
+ *  @param boundingBox boundingBox box for this OSGridRect is required
+ *
+ *  @return OSGridRect calculated based on bounding box provided
+ */
+OSGridRect OSGridRectForBoundingBox(OSBoundingBox boundingBox);
+
+/**
+ *  Returns Bounding Box for GridRect
+ *
+ *  @param gridRect OSGridRect for which bounding box is required
+ *
+ *  @return OSBoundingBox calculated based on grid rect that is provided
+ */
+OSBoundingBox OSBoundingBoxForGridRect(OSGridRect gridRect);
+
+extern OSBoundingBox const OSBoundingBoxNull;
