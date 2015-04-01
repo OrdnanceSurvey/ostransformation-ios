@@ -120,6 +120,7 @@ OSGridPoint const OSGridPointInvalid = {-INFINITY, -INFINITY};
 OSGridPoint const OSGridPointZero = {0, 0};
 OSGridRect const OSNationalGridBounds = {{0, 0}, {OSGridWidth, OSGridHeight}};
 OSGridRect const OSGridRectNull = {{-INFINITY, -INFINITY}, {0, 0}};
+OSBoundingBox const OSBoundingBoxNull = {{0, 0}, {0, 0}};
 
 // From
 // http://www.ordnancesurvey.co.uk/oswebsite/gps/information/coordinatesystemsinfo/guidetonationalgrid/page9.html
@@ -511,4 +512,23 @@ OSGridPoint OSGridPointFromString(NSString *gridRef, NSInteger *outDigits) {
         *outDigits = ndigs;
     }
     return p;
+}
+
+OSGridRect OSGridRectForBoundingBox(OSBoundingBox boundingBox) {
+    OSGridPoint bottomLeftPoint = OSGridPointForCoordinate(boundingBox.bottomLeft);
+    OSGridPoint topRightPoint = OSGridPointForCoordinate(boundingBox.topRight);
+
+    if (bottomLeftPoint.easting > topRightPoint.easting || bottomLeftPoint.northing > topRightPoint.northing) {
+        return OSGridRectNull;
+    }
+
+    OSGridRect bottomLeftGridRect = OSGridRectMake(bottomLeftPoint.easting, bottomLeftPoint.northing, 0, 0);
+    OSGridRect topRightGridRect = OSGridRectMake(topRightPoint.easting, topRightPoint.northing, 0, 0);
+    return OSGridRectUnion(bottomLeftGridRect, topRightGridRect);
+}
+
+OSBoundingBox OSBoundingBoxForGridRect(OSGridRect gridRect) {
+    OSGridPoint bottomLeftPoint = OSGridPointMake(OSGridRectMinEasting(gridRect), OSGridRectMinNorthing(gridRect));
+    OSGridPoint topRightPoint = OSGridPointMake(OSGridRectMaxEasting(gridRect), OSGridRectMaxNorthing(gridRect));
+    return OSBoundingBoxMake(OSCoordinateForGridPoint(bottomLeftPoint), OSCoordinateForGridPoint(topRightPoint));
 }

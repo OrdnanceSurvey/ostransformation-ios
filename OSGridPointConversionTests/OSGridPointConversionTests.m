@@ -661,4 +661,41 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     return result;
 }
 
+- (void)testOSGridRectForBoundingBox {
+    CLLocationCoordinate2D bottomLeft = CLLocationCoordinate2DMake(57.8135184216667, -8.57854461027778);
+    CLLocationCoordinate2D topRight = CLLocationCoordinate2DMake(58.7210828644444, -3.13788287305556);
+    OSBoundingBox boundingBox = OSBoundingBoxMake(bottomLeft, topRight);
+
+    OSGridRect gridRect = OSGridRectForBoundingBox(boundingBox);
+    XCTAssertEqualWithAccuracy(gridRect.originSW.easting, 9587.9146269498742, 0.01, @"Easting");
+    XCTAssertEqualWithAccuracy(gridRect.originSW.northing, 899448.99945611343, 0.01, @"Northing");
+    XCTAssertEqualWithAccuracy(gridRect.size.width, 324610.18636172538, 0.01, @"Width");
+    XCTAssertEqualWithAccuracy(gridRect.size.height, 82597.420136745321, 0.01, @"Height");
+}
+
+- (void)testOSGridRectForBoundingBoxReturnsNullForInvalidBoundingBox {
+    CLLocationCoordinate2D bottomLeft = CLLocationCoordinate2DMake(57.8135184216667, -8.57854461027778);
+    CLLocationCoordinate2D topRight = CLLocationCoordinate2DMake(58.7210828644444, -3.13788287305556);
+    OSBoundingBox boundingBox = OSBoundingBoxMake(topRight, bottomLeft);
+
+    OSGridRect gridRect = OSGridRectForBoundingBox(boundingBox);
+    OSGridRect nullGridRect = OSGridRectNull;
+    XCTAssertEqual(gridRect.originSW.easting, nullGridRect.originSW.easting);
+    XCTAssertEqual(gridRect.originSW.northing, nullGridRect.originSW.northing);
+    XCTAssertEqual(gridRect.size.width, nullGridRect.size.width);
+    XCTAssertEqual(gridRect.size.height, nullGridRect.size.height);
+}
+
+- (void)testOSBoundingBoxForGridRect {
+    CLLocationCoordinate2D bottomLeft = CLLocationCoordinate2DMake(57.8135184216667, -8.57854461027778);
+    CLLocationCoordinate2D topRight = CLLocationCoordinate2DMake(58.7210828644444, -3.13788287305556);
+
+    OSGridRect gridRect = OSGridRectMake(9587.9146269498742, 899448.99945611343, 324610.18636172538, 82597.420136745321);
+    OSBoundingBox bbox = OSBoundingBoxForGridRect(gridRect);
+    XCTAssertEqualWithAccuracy(bbox.bottomLeft.latitude, bottomLeft.latitude, 0.01, @"Bottom left Latitude");
+    XCTAssertEqualWithAccuracy(bbox.bottomLeft.longitude, bottomLeft.longitude, 0.01, @"Bottom left Longitude");
+    XCTAssertEqualWithAccuracy(bbox.topRight.latitude, topRight.latitude, 0.01, @"Top right latitude");
+    XCTAssertEqualWithAccuracy(bbox.topRight.longitude, topRight.longitude, 0.01, @"Top right longitude");
+}
+
 @end
