@@ -212,6 +212,7 @@ extern OSGridRect const OSNationalGridBounds;
 extern OSGridRect const OSGridRectNull;
 
 OSGridRect OSGridRectMake(OSGridDistance easting, OSGridDistance northing, OSGridDistance width, OSGridDistance height);
+OSGridRect OSGridRectEnclosingPoint(OSGridPoint point, OSGridDistance width, OSGridDistance height); // Creates GridRect with exact width and height with the center at the point that's provided.
 OSGridRect OSGridRectOffset(OSGridRect rect, OSGridDistance dx, OSGridDistance dy);
 OSGridRect OSGridRectInset(OSGridRect rect, OSGridDistance dx, OSGridDistance dy);
 OSGridRect OSGridRectUnion(OSGridRect rect1, OSGridRect rect2);
