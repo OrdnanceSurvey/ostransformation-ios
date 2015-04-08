@@ -582,13 +582,13 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     XCTAssertEqualWithAccuracy((float)500.0, OSMetersBetweenGridPoints(gp2, gp1), 0.00001, @"Check distance");
 }
 
-- (void)testOSGridRectMakeNearPoint {
+- (void)testOSGridRectEnclosingPoint {
     OSGridPoint gp = (OSGridPoint){2000, 2000};
-    OSGridRect gridRect = OSGridRectMakeNearPoint(gp, 1000);
+    OSGridRect gridRect = OSGridRectEnclosingPoint(gp, 1000, 500);
     XCTAssertTrue(gridRect.originSW.easting == 1000, @"Easting");
-    XCTAssertTrue(gridRect.originSW.northing == 1000, @"Northing");
+    XCTAssertTrue(gridRect.originSW.northing == 1500, @"Northing");
     XCTAssertTrue(gridRect.size.width == 2000, @"Width");
-    XCTAssertTrue(gridRect.size.height == 2000, @"Height");
+    XCTAssertTrue(gridRect.size.height == 1000, @"Height");
 }
 
 - (void)testOSGridRectOffset {

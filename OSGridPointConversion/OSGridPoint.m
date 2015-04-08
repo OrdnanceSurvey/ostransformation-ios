@@ -214,9 +214,9 @@ OSGridRect OSGridRectMake(OSGridDistance easting, OSGridDistance northing, OSGri
     return rect;
 }
 
-OSGridRect OSGridRectMakeNearPoint(OSGridPoint point, OSGridDistance distance) {
-    OSGridRect bottomLeftGridRect = OSGridRectMake(point.easting - distance, point.northing - distance, 0, 0);
-    OSGridRect topRightGridRect = OSGridRectMake(point.easting + distance, point.northing + distance, 0, 0);
+OSGridRect OSGridRectEnclosingPoint(OSGridPoint point, OSGridDistance width, OSGridDistance height) {
+    OSGridRect bottomLeftGridRect = OSGridRectMake(point.easting - width, point.northing - height, 0, 0);
+    OSGridRect topRightGridRect = OSGridRectMake(point.easting + width, point.northing + height, 0, 0);
     return OSGridRectUnion(bottomLeftGridRect, topRightGridRect);
 }
 
