@@ -214,6 +214,12 @@ OSGridRect OSGridRectMake(OSGridDistance easting, OSGridDistance northing, OSGri
     return rect;
 }
 
+OSGridRect OSGridRectMakeNearPoint(OSGridPoint point, OSGridDistance distance) {
+    OSGridRect bottomLeftGridRect = OSGridRectMake(point.easting - distance, point.northing - distance, 0, 0);
+    OSGridRect topRightGridRect = OSGridRectMake(point.easting + distance, point.northing + distance, 0, 0);
+    return OSGridRectUnion(bottomLeftGridRect, topRightGridRect);
+}
+
 OSGridRect OSGridRectOffset(OSGridRect rect, OSGridDistance dx, OSGridDistance dy) {
     rect.originSW.easting += dx;
     rect.originSW.northing += dy;
