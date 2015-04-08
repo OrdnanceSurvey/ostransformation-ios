@@ -584,7 +584,7 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
 
 - (void)testOSGridRectEnclosingPoint {
     OSGridPoint gp = (OSGridPoint){2000, 2000};
-    OSGridRect gridRect = OSGridRectEnclosingPoint(gp, 1000, 500);
+    OSGridRect gridRect = OSGridRectEnclosingPoint(gp, 2000, 1000);
     XCTAssertTrue(gridRect.originSW.easting == 1000, @"Easting");
     XCTAssertTrue(gridRect.originSW.northing == 1500, @"Northing");
     XCTAssertTrue(gridRect.size.width == 2000, @"Width");

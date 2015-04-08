@@ -215,8 +215,10 @@ OSGridRect OSGridRectMake(OSGridDistance easting, OSGridDistance northing, OSGri
 }
 
 OSGridRect OSGridRectEnclosingPoint(OSGridPoint point, OSGridDistance width, OSGridDistance height) {
-    OSGridRect bottomLeftGridRect = OSGridRectMake(point.easting - width, point.northing - height, 0, 0);
-    OSGridRect topRightGridRect = OSGridRectMake(point.easting + width, point.northing + height, 0, 0);
+    OSGridDistance widthOffset = width / 2;
+    OSGridDistance heightOffset = height / 2;
+    OSGridRect bottomLeftGridRect = OSGridRectMake(point.easting - widthOffset, point.northing - heightOffset, 0, 0);
+    OSGridRect topRightGridRect = OSGridRectMake(point.easting + widthOffset, point.northing + heightOffset, 0, 0);
     return OSGridRectUnion(bottomLeftGridRect, topRightGridRect);
 }
 
