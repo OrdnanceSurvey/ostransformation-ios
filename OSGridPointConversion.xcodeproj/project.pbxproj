@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		452D9BA61B0DC6AC00A93068 /* OSGridPointConversion.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */; };
 		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +56,19 @@
 			remoteInfo = OSGridPointConversion;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		452D9BA51B0DC69A00A93068 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				452D9BA61B0DC6AC00A93068 /* OSGridPointConversion.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
@@ -214,6 +228,7 @@
 				B360D4731A3862F500F537F9 /* Sources */,
 				B360D4741A3862F500F537F9 /* Frameworks */,
 				B360D4751A3862F500F537F9 /* Resources */,
+				452D9BA51B0DC69A00A93068 /* CopyFiles */,
 			);
 			buildRules = (
 			);
