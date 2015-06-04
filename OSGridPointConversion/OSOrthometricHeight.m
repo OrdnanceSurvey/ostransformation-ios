@@ -73,6 +73,10 @@ CLLocationDistance OSOrthomtricHeightForLocation(CLLocation *location) {
     double dy = point.y - y0;
     double t = dx / OSGM02CellSize;
     double u = dy / OSGM02CellSize;
+    /* 
+     Bilinear interpolation of the four record values
+     From pg21 of Transformation user guide
+     */
     double shiftGeoid = ((1 - t) * (1 - u) * record0.geoidUndulation) + (t * (1 - u) * record1.geoidUndulation) + (t * u * record2.geoidUndulation) + ((1 - t) * u * record3.geoidUndulation);
     return location.altitude - shiftGeoid;
 }
