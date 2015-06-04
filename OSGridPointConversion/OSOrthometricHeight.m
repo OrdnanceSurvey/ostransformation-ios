@@ -28,14 +28,20 @@ _OSGM02Record _OSGM02RecordAtIndex(NSUInteger index) {
     return record;
 }
 
+const double OSGM02CellSize = 1000;
+
 _OSGM02Record _OSGM02RecordForPoint(OSRMProjectedPoint point) {
-    NSInteger eastIndex = (NSInteger)(point.x / 1000);
-    NSInteger northIndex = (NSInteger)(point.y / 1000);
+    /*
+     See pg13 of transformation user guide pdf in this repository
+     To find the record number corresponding to a given ETRS89 easting and northing, use the following algorithm:
+     east_index = north_index = record_number =
+     integer_part_of (easting/1,000) integer_part_of (northing/1,000) east_index + (north_index x 701) + 1
+     */
+    NSInteger eastIndex = (NSInteger)(point.x / OSGM02CellSize);
+    NSInteger northIndex = (NSInteger)(point.y / OSGM02CellSize);
     NSInteger recordIndex = eastIndex + (northIndex * 701);
     return _OSGM02RecordAtIndex(recordIndex);
 }
-
-const double OSGM02CellSize = 1000;
 
 CLLocationDistance OSOrthomtricHeightForLocation(CLLocation *location) {
     OSRMProjectedRect theBounds = OSRMProjectedRectMake(-180.0, -90, 360.0, 180.0);
