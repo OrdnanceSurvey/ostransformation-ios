@@ -46,11 +46,8 @@
                 return;
             }
             NSArray *columns = [line componentsSeparatedByString:@","];
-            if (columns.count < 27) {
-                // TODO: Handle tests outside polygon
-                return;
-            }
-            OSOrthometricHeightTestCase *testCase = [OSOrthometricHeightTestCase testCaseWithStationName:columns[0] latNS:columns[4] latDeg:[columns[5] integerValue] latMin:[columns[6] integerValue] latSec:[columns[7] doubleValue] lonEW:columns[8] lonDeg:[columns[9] integerValue] lonMin:[columns[10] integerValue] lonSec:[columns[11] doubleValue] etrs89Height:[columns[12] doubleValue] odnHeight:[columns[25] doubleValue]];
+            double testCaseHeight = columns.count == 27 ? [columns[25] doubleValue] : OSOrthometricHeightError; // We have two points outside of the data set, so they should return an error
+            OSOrthometricHeightTestCase *testCase = [OSOrthometricHeightTestCase testCaseWithStationName:columns[0] latNS:columns[4] latDeg:[columns[5] integerValue] latMin:[columns[6] integerValue] latSec:[columns[7] doubleValue] lonEW:columns[8] lonDeg:[columns[9] integerValue] lonMin:[columns[10] integerValue] lonSec:[columns[11] doubleValue] etrs89Height:[columns[12] doubleValue] odnHeight:testCaseHeight];
             [testData addObject:testCase];
         }];
 

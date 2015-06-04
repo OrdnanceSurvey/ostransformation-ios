@@ -9,6 +9,8 @@
 #import "OSOrthometricHeight.h"
 #import "OSRMProjection.h"
 
+CLLocationDistance const OSOrthometricHeightError = DBL_MIN;
+
 typedef struct {
     int etrs89Easting;
     int etrs89Northing;
@@ -48,6 +50,10 @@ CLLocationDistance OSOrthomtricHeightForLocation(CLLocation *location) {
     _OSGM02Record record1 = _OSGM02RecordForPoint(OSRMProjectedPointMake(point.x + OSGM02CellSize, point.y));
     _OSGM02Record record2 = _OSGM02RecordForPoint(OSRMProjectedPointMake(point.x + OSGM02CellSize, point.y + OSGM02CellSize));
     _OSGM02Record record3 = _OSGM02RecordForPoint(OSRMProjectedPointMake(point.x, point.y + OSGM02CellSize));
+
+    if (record0.geoidUndulation == 0 || record1.geoidUndulation == 0 || record2.geoidUndulation == 0 || record3.geoidUndulation == 0) {
+        return OSOrthometricHeightError;
+    }
 
     double dx = point.x - x0;
     double dy = point.y - y0;
