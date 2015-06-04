@@ -27,8 +27,8 @@ _OSGM02Record _OSGM02RecordAtIndex(NSUInteger index) {
 }
 
 _OSGM02Record _OSGM02RecordForPoint(OSRMProjectedPoint point) {
-    NSInteger eastIndex = (int)(point.x / 1000);
-    NSInteger northIndex = (int)(point.y / 1000);
+    NSInteger eastIndex = (NSInteger)(point.x / 1000);
+    NSInteger northIndex = (NSInteger)(point.y / 1000);
     NSInteger recordIndex = eastIndex + (northIndex * 701);
     return _OSGM02RecordAtIndex(recordIndex);
 }
@@ -39,8 +39,8 @@ CLLocationDistance OSOrthomtricHeightForLocation(CLLocation *location) {
     OSRMProjectedRect theBounds = OSRMProjectedRectMake(-180.0, -90, 360.0, 180.0);
     OSRMProjection *proj = [[OSRMProjection alloc] initWithString:@"+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=WGS84" inBounds:theBounds];
     OSRMProjectedPoint point = [proj coordinateToProjectedPoint:location.coordinate];
-    NSInteger eastIndex0 = (int)(point.x / OSGM02CellSize);
-    NSInteger northIndex0 = (int)(point.y / OSGM02CellSize);
+    NSInteger eastIndex0 = (NSInteger)(point.x / OSGM02CellSize);
+    NSInteger northIndex0 = (NSInteger)(point.y / OSGM02CellSize);
     double x0 = eastIndex0 * OSGM02CellSize;
     double y0 = northIndex0 * OSGM02CellSize;
     OSRMProjectedPoint point0 = OSRMProjectedPointMake(x0, y0);
