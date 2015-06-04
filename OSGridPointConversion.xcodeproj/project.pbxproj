@@ -28,6 +28,7 @@
 		455706A01B1F51710045B0A1 /* OSOrthometricHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */; };
 		455706A21B202D280045B0A1 /* OSOrthometricHeightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */; };
 		455706A41B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv in Resources */ = {isa = PBXBuildFile; fileRef = 455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */; };
+		4579DF8A1B20706C001EB6F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4579DF891B20706C001EB6F9 /* main.m */; };
 		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */; };
 		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +74,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4579DF851B20706C001EB6F9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +91,8 @@
 		4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSOrthometricHeight.m; sourceTree = "<group>"; };
 		455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSOrthometricHeightTests.m; sourceTree = "<group>"; };
 		455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OSTN02_OSGM02Tests_Out.csv; sourceTree = "<group>"; };
+		4579DF871B20706C001EB6F9 /* genosgm02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = genosgm02; sourceTree = BUILT_PRODUCTS_DIR; };
+		4579DF891B20706C001EB6F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
 		72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+OSGridPoint.m"; sourceTree = "<group>"; };
 		B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSGridPointConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +114,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4579DF841B20706C001EB6F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B360D4681A3862F500F537F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,11 +140,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4579DF881B20706C001EB6F9 /* genosgm02 */ = {
+			isa = PBXGroup;
+			children = (
+				4579DF891B20706C001EB6F9 /* main.m */,
+			);
+			path = genosgm02;
+			sourceTree = "<group>";
+		};
 		B360D4621A3862F500F537F9 = {
 			isa = PBXGroup;
 			children = (
 				B360D46E1A3862F500F537F9 /* OSGridPointConversion */,
 				B360D47B1A3862F500F537F9 /* OSGridPointConversionTests */,
+				4579DF881B20706C001EB6F9 /* genosgm02 */,
 				B360D46D1A3862F500F537F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,6 +163,7 @@
 			children = (
 				B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */,
 				B360D4771A3862F500F537F9 /* OSGridPointConversionTests.xctest */,
+				4579DF871B20706C001EB6F9 /* genosgm02 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,6 +248,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4579DF861B20706C001EB6F9 /* genosgm02 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4579DF8D1B20706C001EB6F9 /* Build configuration list for PBXNativeTarget "genosgm02" */;
+			buildPhases = (
+				4579DF831B20706C001EB6F9 /* Sources */,
+				4579DF841B20706C001EB6F9 /* Frameworks */,
+				4579DF851B20706C001EB6F9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = genosgm02;
+			productName = genosgm02;
+			productReference = 4579DF871B20706C001EB6F9 /* genosgm02 */;
+			productType = "com.apple.product-type.tool";
+		};
 		B360D46B1A3862F500F537F9 /* OSGridPointConversion */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B360D4821A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSGridPointConversion" */;
@@ -266,6 +312,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Ordnance Survey";
 				TargetAttributes = {
+					4579DF861B20706C001EB6F9 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					B360D46B1A3862F500F537F9 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -292,6 +341,7 @@
 				B360D46B1A3862F500F537F9 /* OSGridPointConversion */,
 				B360D4761A3862F500F537F9 /* OSGridPointConversionTests */,
 				B3A4696A1A4097CC0007B82C /* OSGridPointConversionBuildUniversal */,
+				4579DF861B20706C001EB6F9 /* genosgm02 */,
 			);
 		};
 /* End PBXProject section */
@@ -348,6 +398,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4579DF831B20706C001EB6F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4579DF8A1B20706C001EB6F9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B360D4671A3862F500F537F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +443,33 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4579DF8B1B20706C001EB6F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4579DF8C1B20706C001EB6F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		B360D4801A3862F500F537F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -556,6 +641,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4579DF8D1B20706C001EB6F9 /* Build configuration list for PBXNativeTarget "genosgm02" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4579DF8B1B20706C001EB6F9 /* Debug */,
+				4579DF8C1B20706C001EB6F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSGridPointConversion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
