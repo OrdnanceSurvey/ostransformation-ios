@@ -26,6 +26,8 @@
 		4557069C1B1F502C0045B0A1 /* OSGM02 in Resources */ = {isa = PBXBuildFile; fileRef = 4557069B1B1F502C0045B0A1 /* OSGM02 */; };
 		4557069F1B1F51710045B0A1 /* OSOrthometricHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4557069D1B1F51710045B0A1 /* OSOrthometricHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		455706A01B1F51710045B0A1 /* OSOrthometricHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */; };
+		455706A21B202D280045B0A1 /* OSOrthometricHeightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */; };
+		455706A41B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv in Resources */ = {isa = PBXBuildFile; fileRef = 455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */; };
 		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */; };
 		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +79,8 @@
 		4557069B1B1F502C0045B0A1 /* OSGM02 */ = {isa = PBXFileReference; lastKnownFileType = file; path = OSGM02; sourceTree = "<group>"; };
 		4557069D1B1F51710045B0A1 /* OSOrthometricHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSOrthometricHeight.h; sourceTree = "<group>"; };
 		4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSOrthometricHeight.m; sourceTree = "<group>"; };
+		455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSOrthometricHeightTests.m; sourceTree = "<group>"; };
+		455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OSTN02_OSGM02Tests_Out.csv; sourceTree = "<group>"; };
 		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
 		72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+OSGridPoint.m"; sourceTree = "<group>"; };
 		B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSGridPointConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,8 +173,10 @@
 		B360D47B1A3862F500F537F9 /* OSGridPointConversionTests */ = {
 			isa = PBXGroup;
 			children = (
+				455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */,
 				B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */,
 				B360D47C1A3862F500F537F9 /* Supporting Files */,
+				455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */,
 			);
 			path = OSGridPointConversionTests;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455706A41B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B360D47F1A3862F500F537F9 /* OSGridPointConversionTests.m in Sources */,
+				455706A21B202D280045B0A1 /* OSOrthometricHeightTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
