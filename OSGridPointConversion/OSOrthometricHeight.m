@@ -39,6 +39,14 @@ const double OSGM02CellSize = 1000;
 
 CLLocationDistance OSOrthomtricHeightForLocation(CLLocation *location) {
     OSRMProjectedRect theBounds = OSRMProjectedRectMake(-180.0, -90, 360.0, 180.0);
+    /*
+     +proj = transverse mercator projection
+     +lat_0/+lon_0 = True origin
+     +k = Scale factor on central meridian
+     +x_0/+y_0 = Map coordinates of true origin
+     +ellps = WGS84 ellipse
+     Values obtained from pg23 of Transformation user guide pdf in this repository
+     */
     OSRMProjection *proj = [[OSRMProjection alloc] initWithString:@"+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=WGS84" inBounds:theBounds];
     OSRMProjectedPoint point = [proj coordinateToProjectedPoint:location.coordinate];
     NSInteger eastIndex0 = (NSInteger)(point.x / OSGM02CellSize);
