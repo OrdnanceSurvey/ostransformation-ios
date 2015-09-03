@@ -540,3 +540,16 @@ OSBoundingBox OSBoundingBoxForGridRect(OSGridRect gridRect) {
     OSGridPoint topRightPoint = OSGridPointMake(OSGridRectMaxEasting(gridRect), OSGridRectMaxNorthing(gridRect));
     return OSBoundingBoxMake(OSCoordinateForGridPoint(bottomLeftPoint), OSCoordinateForGridPoint(topRightPoint));
 }
+
+OSBoundingBox OSBoundingBoxAroundCenter(CLLocationCoordinate2D center, CLLocationDistance distance) {
+    OSCoordinateRegion region = OSCoordinateRegionMakeWithDistance(center, distance, distance);
+    OSGridRect gridRect = OSGridRectForCoordinateRegion(region);
+    CLLocationCoordinate2D bottomLeftCoordinate = OSCoordinateForGridPoint(gridRect.originSW);
+
+    OSGridPoint topRightPoint = {gridRect.originSW.easting + gridRect.size.width, gridRect.originSW.northing + gridRect.size.height};
+    CLLocationCoordinate2D topRightCoordinate = OSCoordinateForGridPoint(topRightPoint);
+    OSBoundingBox boundingBox;
+    boundingBox.bottomLeft = bottomLeftCoordinate;
+    boundingBox.topRight = topRightCoordinate;
+    return boundingBox;
+}
