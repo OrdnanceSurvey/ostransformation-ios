@@ -318,4 +318,15 @@ OSGridRect OSGridRectForBoundingBox(OSBoundingBox boundingBox);
  */
 OSBoundingBox OSBoundingBoxForGridRect(OSGridRect gridRect);
 
+/**
+ *
+ *  Creates bounding box around the center point provided with given distance in each direction.
+ *
+ *  @param center   center location around which bounding box should be created
+ *  @param distance distance in each direction for required bounding box
+ *
+ *  @return Bounding box around given center and distance in each direction
+ */
+OSBoundingBox OSBoundingBoxAroundCenter(CLLocationCoordinate2D center, CLLocationDistance distance);
+
 extern OSBoundingBox const OSBoundingBoxNull;

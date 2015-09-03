@@ -431,7 +431,8 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
         XCTAssertFalse(OSGridPointIsValid(gp));
         MKMapPoint mp = MKMapPointForCoordinate(coord);
 
-        XCTAssertTrue(MKMapPointEqualToPoint(mp, INVALID_MAP_POINT), @"MKMapPointForCoordinate() seems to return (-1,-1) for " @"invalid inputs.");
+        XCTAssertTrue(MKMapPointEqualToPoint(mp, INVALID_MAP_POINT), @"MKMapPointForCoordinate() seems to return (-1,-1) for "
+                                                                     @"invalid inputs.");
     }
     for (unsigned i = 0; i < 10; i++) {
         OSGridPoint p = (i < 9 ? (OSGridPoint){invalid[i / 3], invalid[i % 3]} : OSGridPointInvalid);
@@ -722,6 +723,13 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     topRight = CLLocationCoordinate2DMake(58.7210828644444, -8.57854461027778);
     b1 = OSBoundingBoxMake(topRight, bottomLeft);
     XCTAssertFalse(OSBoundingBoxEqualToBox(b1, b2));
+}
+
+- (void)testBoundingBoxAroundPointWithGivenCenter {
+    OSBoundingBox expectedBbox = OSBoundingBoxMake(CLLocationCoordinate2DMake(57.813028682509014, -8.5792989893160421), CLLocationCoordinate2DMake(57.814008142806323, -8.5777901849576725));
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(57.8135184216667, -8.57854461027778);
+    OSBoundingBox bbox = OSBoundingBoxAroundCenter(center, 100);
+    XCTAssertTrue(OSBoundingBoxEqualToBox(expectedBbox, bbox));
 }
 
 @end
