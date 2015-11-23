@@ -154,8 +154,8 @@ static const struct {
 };
 
 static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordinate2D b) {
-    CLLocation *aa = [[CLLocation alloc] initWithCoordinate:a altitude:0 horizontalAccuracy:-1 verticalAccuracy:-1 timestamp:nil];
-    CLLocation *bb = [[CLLocation alloc] initWithCoordinate:b altitude:0 horizontalAccuracy:-1 verticalAccuracy:-1 timestamp:nil];
+    CLLocation *aa = [[CLLocation alloc] initWithCoordinate:a altitude:0 horizontalAccuracy:-1 verticalAccuracy:-1 timestamp:NSDate.date];
+    CLLocation *bb = [[CLLocation alloc] initWithCoordinate:b altitude:0 horizontalAccuracy:-1 verticalAccuracy:-1 timestamp:NSDate.date];
     return [aa distanceFromLocation:bb];
 }
 
@@ -431,7 +431,7 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
         XCTAssertFalse(OSGridPointIsValid(gp));
         MKMapPoint mp = MKMapPointForCoordinate(coord);
 
-        XCTAssertTrue(MKMapPointEqualToPoint(mp, INVALID_MAP_POINT), @"MKMapPointForCoordinate() seems to return (-1,-1) for " @"invalid inputs.");
+        XCTAssertTrue(MKMapPointEqualToPoint(mp, INVALID_MAP_POINT), @"MKMapPointForCoordinate() seems to return (-1,-1) for invalid inputs.");
     }
     for (unsigned i = 0; i < 10; i++) {
         OSGridPoint p = (i < 9 ? (OSGridPoint){invalid[i / 3], invalid[i % 3]} : OSGridPointInvalid);
@@ -442,9 +442,8 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
         OSGridRect gr = (OSGridRect){p, {0, 0}};
         XCTAssertTrue(OSGridRectIsNull(gr));
 
-        CGRect r = {{gr.originSW.easting, -gr.originSW.northing}, {gr.size.width, -gr.size.height}};
-        // This is not always true for NANs. We should avoid them.
-        XCTAssertTrue(CGRectIsNull(r) || isnan(gr.originSW.easting) || isnan(gr.originSW.northing));
+        OSGridRect r = {{gr.originSW.easting, -gr.originSW.northing}, {gr.size.width, -gr.size.height}};
+        XCTAssertTrue(OSGridRectIsNull(r));
     }
     for (unsigned i = 0; i < 9; i++) {
         MKMapPoint mp = (MKMapPoint){invalid[i / 3], invalid[i % 3]};
