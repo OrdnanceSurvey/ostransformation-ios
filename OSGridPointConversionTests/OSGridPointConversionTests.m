@@ -165,10 +165,6 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
 
 @implementation OSGridPointCoversionTests
 
-- (void)testFailure {
-    XCTFail(@"making it fail");
-}
-
 - (void)testAKnownCoordinate {
     CLLocationCoordinate2D testCoordinate = CLLocationCoordinate2DMake(51.8589089675, -4.30852476611111);
     OSGridPoint testGridPoint = OSGridPointMake(241124.5732599, 220332.6360795);
