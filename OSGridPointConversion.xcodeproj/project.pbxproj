@@ -28,6 +28,8 @@
 		455706A01B1F51710045B0A1 /* OSOrthometricHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */; };
 		455706A21B202D280045B0A1 /* OSOrthometricHeightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */; };
 		455706A41B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv in Resources */ = {isa = PBXBuildFile; fileRef = 455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */; };
+		45771D341C45520900324679 /* OSBNGTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45771D321C45520900324679 /* OSBNGTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45771D351C45520900324679 /* OSBNGTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45771D331C45520900324679 /* OSBNGTransformation.m */; };
 		4579DF8A1B20706C001EB6F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4579DF891B20706C001EB6F9 /* main.m */; };
 		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */; };
@@ -91,6 +93,8 @@
 		4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSOrthometricHeight.m; sourceTree = "<group>"; };
 		455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSOrthometricHeightTests.m; sourceTree = "<group>"; };
 		455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OSTN02_OSGM02Tests_Out.csv; sourceTree = "<group>"; };
+		45771D321C45520900324679 /* OSBNGTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSBNGTransformation.h; sourceTree = "<group>"; };
+		45771D331C45520900324679 /* OSBNGTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSBNGTransformation.m; sourceTree = "<group>"; };
 		4579DF871B20706C001EB6F9 /* genosgm02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = genosgm02; sourceTree = BUILT_PRODUCTS_DIR; };
 		4579DF891B20706C001EB6F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */,
 				4557069D1B1F51710045B0A1 /* OSOrthometricHeight.h */,
 				4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */,
+				45771D321C45520900324679 /* OSBNGTransformation.h */,
+				45771D331C45520900324679 /* OSBNGTransformation.m */,
 				B372FA911A386F8B0067FEA9 /* Proj4 */,
 				B360D46F1A3862F500F537F9 /* Supporting Files */,
 			);
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C2F1381AAF127100558657 /* proj_api.h in Headers */,
+				45771D341C45520900324679 /* OSBNGTransformation.h in Headers */,
 				B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */,
 				B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */,
 				B372FA7F1A38658B0067FEA9 /* OSRMProjection.h in Headers */,
@@ -412,6 +419,7 @@
 			files = (
 				B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */,
 				455706A01B1F51710045B0A1 /* OSOrthometricHeight.m in Sources */,
+				45771D351C45520900324679 /* OSBNGTransformation.m in Sources */,
 				B372FA831A3865A70067FEA9 /* OSRMFoundation.c in Sources */,
 				B372FA801A38658B0067FEA9 /* OSRMProjection.m in Sources */,
 				72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */,
