@@ -29,6 +29,7 @@
 #import "proj_api.h"
 #import "OSRMProjection.h"
 #import "OSGridPoint.h"
+#import "OSBNGTransformation.h"
 
 @implementation OSRMProjection {
     // The internal projection that has been setup
@@ -182,12 +183,9 @@
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *gridShiftFilePath = [[NSBundle bundleForClass:self] pathForResource:@"OSTN02_NTv2" ofType:@"gsb"];
         OSRMProjectedRect bounds = {{0, 0}, {OSGridWidth, OSGridHeight}};
-        NSString *projDefinitionString = [NSString stringWithFormat:@"+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +nadgrids=%@ +units=m +no_defs", gridShiftFilePath];
-        proj = [[OSRMProjection alloc]
-            initWithString:projDefinitionString
-                  inBounds:bounds];
+        proj = [[OSRMProjection alloc] initWithString:OSBNGTransformation.proj4String
+                                             inBounds:bounds];
     });
 
     return proj;
