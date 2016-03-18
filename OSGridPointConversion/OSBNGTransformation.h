@@ -14,8 +14,14 @@
 @interface OSBNGTransformation : NSObject
 
 /**
- *  Returns the proj 4 string to use for converting to BNG
+ *  Returns the proj 4 string to use for converting to BNG.
+ *  Uses OSTN02 to ensure highest accuracy transformation.
  */
 + (NSString *)proj4String;
+
+/**
+ *  Returns the proj 4 string not referencing OSTN02
+ */
++ (NSString *)sevenPointProj4String;
 
 @end
