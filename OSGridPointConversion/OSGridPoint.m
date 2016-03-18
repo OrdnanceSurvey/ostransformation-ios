@@ -154,11 +154,11 @@ CLLocationCoordinate2D OSCoordinateForGridPoint(OSGridPoint gridPoint) {
     return [[OSRMProjection OSGB36NationalGrid] projectedPointToCoordinate:(OSRMProjectedPoint){gridPoint.easting, gridPoint.northing}];
 }
 
-CLLocationCoordinate2D OSCoordinateForGridPointUsing7Point(OSGridPoint gridPoint) {
+CLLocationCoordinate2D OSCoordinateForGridPointUsing7Parameter(OSGridPoint gridPoint) {
     if (!OSGridPointIsValid(gridPoint)) {
         return kCLLocationCoordinate2DInvalid;
     }
-    return [[OSRMProjection OSGB36NationalGridSevenPoint] projectedPointToCoordinate:(OSRMProjectedPoint){gridPoint.easting, gridPoint.northing}];
+    return [[OSRMProjection OSGB36NationalGridSevenParam] projectedPointToCoordinate:(OSRMProjectedPoint){gridPoint.easting, gridPoint.northing}];
 }
 
 OSGridDistance OSMetersBetweenGridPoints(OSGridPoint gp1, OSGridPoint gp2) {

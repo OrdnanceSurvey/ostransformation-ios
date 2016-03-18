@@ -191,13 +191,13 @@
     return proj;
 }
 
-+ (OSRMProjection *)OSGB36NationalGridSevenPoint {
++ (OSRMProjection *)OSGB36NationalGridSevenParam {
     static OSRMProjection *proj;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         OSRMProjectedRect bounds = {{0, 0}, {OSGridWidth, OSGridHeight}};
-        proj = [[OSRMProjection alloc] initWithString:OSBNGTransformation.sevenPointProj4String
+        proj = [[OSRMProjection alloc] initWithString:OSBNGTransformation.sevenParamProj4String
                                              inBounds:bounds];
     });
 

@@ -152,11 +152,11 @@ OSGridPoint OSGridPointForCoordinate(CLLocationCoordinate2D coordinate);
 CLLocationCoordinate2D OSCoordinateForGridPoint(OSGridPoint gridPoint);
 /**
  *  Converts an OSGB36 grid point to a CLLocationCoordinate2D
- *  Uses standard proj.4 7 point transformation. Lower accuracy than above
+ *  Uses standard proj.4 7 parameter transformation. Lower accuracy than above
  *  but may well provide better results when overlaying data on a source
- *  that wasn't created using OSTN02
+ *  that wasn't created using OSTN02. Accuracy is likely between 5-7m.
  */
-CLLocationCoordinate2D OSCoordinateForGridPointUsing7Point(OSGridPoint gridPoint);
+CLLocationCoordinate2D OSCoordinateForGridPointUsing7Parameter(OSGridPoint gridPoint);
 
 /// @name Formatting strings
 

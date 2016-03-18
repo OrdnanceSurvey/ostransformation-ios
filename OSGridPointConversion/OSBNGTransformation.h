@@ -22,6 +22,6 @@
 /**
  *  Returns the proj 4 string not referencing OSTN02
  */
-+ (NSString *)sevenPointProj4String;
++ (NSString *)sevenParamProj4String;
 
 @end

@@ -50,7 +50,7 @@
 + (OSRMProjection *)googleProjection;
 + (OSRMProjection *)WGS84LatLong;
 + (OSRMProjection *)OSGB36NationalGrid; // Uses OSTN02
-+ (OSRMProjection *)OSGB36NationalGridSevenPoint; // Uses standard proj4 string
++ (OSRMProjection *)OSGB36NationalGridSevenParam; // Uses standard proj4 string
 
 - (id)initWithString:(NSString *)proj4String inBounds:(OSRMProjectedRect)projectedBounds;
 
