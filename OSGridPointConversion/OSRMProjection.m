@@ -191,4 +191,17 @@
     return proj;
 }
 
++ (OSRMProjection *)OSGB36NationalGridSevenParam {
+    static OSRMProjection *proj;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        OSRMProjectedRect bounds = {{0, 0}, {OSGridWidth, OSGridHeight}};
+        proj = [[OSRMProjection alloc] initWithString:OSBNGTransformation.sevenParamProj4String
+                                             inBounds:bounds];
+    });
+
+    return proj;
+}
+
 @end
