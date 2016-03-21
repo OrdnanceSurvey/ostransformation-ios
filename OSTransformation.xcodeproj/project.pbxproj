@@ -316,7 +316,7 @@
 		B360D4631A3862F500F537F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Ordnance Survey";
 				TargetAttributes = {
 					4579DF861B20706C001EB6F9 = {
@@ -499,6 +499,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -581,6 +582,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OSTransformation",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
 				SKIP_INSTALL = YES;
 			};
@@ -603,6 +605,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OSTransformation",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
 				SKIP_INSTALL = YES;
 			};
@@ -621,6 +624,7 @@
 				);
 				INFOPLIST_FILE = OSTransformation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
 			};
 			name = Debug;
@@ -634,6 +638,7 @@
 				);
 				INFOPLIST_FILE = OSTransformation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
 			};
 			name = Release;
