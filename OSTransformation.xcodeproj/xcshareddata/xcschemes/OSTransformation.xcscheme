@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B360D46B1A3862F500F537F9"
-               BuildableName = "OSGridPointConversion.framework"
-               BlueprintName = "OSGridPointConversion"
-               ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
+               BuildableName = "OSTransformation.framework"
+               BlueprintName = "OSTransformation"
+               ReferencedContainer = "container:OSTransformation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B360D4761A3862F500F537F9"
-               BuildableName = "OSGridPointConversionTests.xctest"
-               BlueprintName = "OSGridPointConversionTests"
-               ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
+               BuildableName = "OSTransformation.xctest"
+               BlueprintName = "OSTransformationTests"
+               ReferencedContainer = "container:OSTransformation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,9 +48,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B360D4761A3862F500F537F9"
-               BuildableName = "OSGridPointConversionTests.xctest"
-               BlueprintName = "OSGridPointConversionTests"
-               ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
+               BuildableName = "OSTransformation.xctest"
+               BlueprintName = "OSTransformationTests"
+               ReferencedContainer = "container:OSTransformation.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B360D46B1A3862F500F537F9"
-            BuildableName = "OSGridPointConversion.framework"
-            BlueprintName = "OSGridPointConversion"
-            ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
+            BuildableName = "OSTransformation.framework"
+            BlueprintName = "OSTransformation"
+            ReferencedContainer = "container:OSTransformation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B360D46B1A3862F500F537F9"
-            BuildableName = "OSGridPointConversion.framework"
-            BlueprintName = "OSGridPointConversion"
-            ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
+            BuildableName = "OSTransformation.framework"
+            BlueprintName = "OSTransformation"
+            ReferencedContainer = "container:OSTransformation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <EnvironmentVariables>
@@ -105,9 +105,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B360D46B1A3862F500F537F9"
-            BuildableName = "OSGridPointConversion.framework"
-            BlueprintName = "OSGridPointConversion"
-            ReferencedContainer = "container:OSGridPointConversion.xcodeproj">
+            BuildableName = "OSTransformation.framework"
+            BlueprintName = "OSTransformation"
+            ReferencedContainer = "container:OSTransformation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

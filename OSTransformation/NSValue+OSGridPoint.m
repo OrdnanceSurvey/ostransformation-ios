@@ -1,6 +1,6 @@
 //
 //  NSValue+OSGridPoint.m
-//  OSGridPointConversion
+//  OSTransformation
 //
 //  Created by Shrikantreddy Tekale on 15/01/2015.
 //  Copyright (c) 2015 Ordnance Survey. All rights reserved.

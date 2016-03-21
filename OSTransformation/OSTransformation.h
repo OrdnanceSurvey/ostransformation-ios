@@ -1,6 +1,6 @@
 //
-//  OSGridPointConversion.h
-//  OSGridPointConversion
+//  OSTransformation.h
+//  OSTransformation
 //
 //  Created by David Haynes (C) on 10/12/2014.
 //  Copyright (c) 2014 Ordnance Survey. All rights reserved.
@@ -112,15 +112,15 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for OSGridPointConversion.
-FOUNDATION_EXPORT double OSGridPointConversionVersionNumber;
+//! Project version number for OSTransformation.
+FOUNDATION_EXPORT double OSTransformationVersionNumber;
 
-//! Project version string for OSGridPointConversion.
-FOUNDATION_EXPORT const unsigned char OSGridPointConversionVersionString[];
+//! Project version string for OSTransformation.
+FOUNDATION_EXPORT const unsigned char OSTransformationVersionString[];
 
-#import <OSGridPointConversion/OSGridPoint.h>
-#import <OSGridPointConversion/NSValue+OSGridPoint.h>
-#import <OSGridPointConversion/OSBNGTransformation.h>
-#import <OSGridPointConversion/OSRMProjection.h>
-#import <OSGridPointConversion/OSRMFoundation.h>
-#import <OSGridPointConversion/OSOrthometricHeight.h>
+#import <OSTransformation/OSGridPoint.h>
+#import <OSTransformation/NSValue+OSGridPoint.h>
+#import <OSTransformation/OSBNGTransformation.h>
+#import <OSTransformation/OSRMProjection.h>
+#import <OSTransformation/OSRMFoundation.h>
+#import <OSTransformation/OSOrthometricHeight.h>

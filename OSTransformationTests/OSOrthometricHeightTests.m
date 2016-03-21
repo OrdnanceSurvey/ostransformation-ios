@@ -8,7 +8,7 @@
 
 @import XCTest;
 @import CoreLocation;
-@import OSGridPointConversion;
+@import OSTransformation;
 
 @interface OSOrthometricHeightTestCase : NSObject
 @property (nonatomic, copy) NSString *stationName;

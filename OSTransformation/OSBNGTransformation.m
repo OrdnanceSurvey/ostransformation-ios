@@ -1,6 +1,6 @@
 //
 //  OSBNGTransformation.m
-//  OSGridPointConversion
+//  OSTransformation
 //
 //  Created by Dave Hardiman on 12/01/2016.
 //  Copyright © 2016 Ordnance Survey. All rights reserved.
