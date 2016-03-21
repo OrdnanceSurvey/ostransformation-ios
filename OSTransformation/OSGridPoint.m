@@ -1,4 +1,4 @@
-// The OpenSpace iOS SDK is protected by (c) Crown copyright – Ordnance Survey
+// The OSTransformation SDK is protected by (c) Crown copyright – Ordnance Survey
 // 2012.[https://github.com/OrdnanceSurvey]
 
 // All rights reserved (subject to the BSD licence terms as follows):
