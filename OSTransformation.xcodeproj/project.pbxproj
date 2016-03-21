@@ -23,7 +23,6 @@
 
 /* Begin PBXBuildFile section */
 		452D9BA61B0DC6AC00A93068 /* OSTransformation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSTransformation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4557069C1B1F502C0045B0A1 /* OSGM02 in Resources */ = {isa = PBXBuildFile; fileRef = 4557069B1B1F502C0045B0A1 /* OSGM02 */; };
 		4557069F1B1F51710045B0A1 /* OSOrthometricHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4557069D1B1F51710045B0A1 /* OSOrthometricHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		455706A01B1F51710045B0A1 /* OSOrthometricHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */; };
 		455706A21B202D280045B0A1 /* OSOrthometricHeightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */; };
@@ -358,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C2EFE11AAE0EFA00558657 /* OSTN02_NTv2.gsb in Resources */,
-				4557069C1B1F502C0045B0A1 /* OSGM02 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
