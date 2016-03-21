@@ -18,7 +18,7 @@ typedef struct {
 } _OSGM02Record;
 
 _OSGM02Record _OSGM02RecordAtIndex(NSUInteger index) {
-    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:[[NSBundle bundleForClass:OSRMProjection.class] pathForResource:@"OSGM02" ofType:nil]];
+    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:[[NSBundle bundleForClass:NSClassFromString(@"OSGM02Stub")] pathForResource:@"OSGM02" ofType:nil]];
     NSInteger location = sizeof(_OSGM02Record) * index;
     [handle seekToFileOffset:location];
     NSData *recordData = [handle readDataOfLength:sizeof(_OSGM02Record)];
