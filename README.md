@@ -1,6 +1,7 @@
 # OSTransformation
 [![Circle CI](https://circleci.com/gh/OrdnanceSurvey/ostransformation-ios.svg?style=svg)](https://circleci.com/gh/OrdnanceSurvey/ostransformation-ios)
 [![Coverage Status](https://coveralls.io/repos/github/OrdnanceSurvey/ostransformation-ios/badge.svg?branch=master)](https://coveralls.io/github/OrdnanceSurvey/ostransformation-ios?branch=master)
+
 This library allows for conversion to and from British National Grid eastings
 and northings and WGS 84 (EPSG:4326) coordinates.
 
