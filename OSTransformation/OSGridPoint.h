@@ -144,6 +144,10 @@ typedef struct {
 } OSGridPoint;
 
 /// @name Coordinate conversions
+/**
+ *  Converts a CLLocationCoordinate2D to an OSGB36 grid point
+ *  Uses OSTN02 grid shift for sub 0.01m accuracy
+ */
 OSGridPoint OSGridPointForCoordinate(CLLocationCoordinate2D coordinate);
 /**
  *  Converts an OSGB36 grid point to a CLLocationCoordinate2D
@@ -157,6 +161,13 @@ CLLocationCoordinate2D OSCoordinateForGridPoint(OSGridPoint gridPoint);
  *  that wasn't created using OSTN02.
  */
 CLLocationCoordinate2D OSCoordinateForGridPointUsing7Parameter(OSGridPoint gridPoint);
+/**
+ *  Converts a CLLocationCoordinate2D to a OSGB36 grid point.
+ *  Uses OSGB36 datum for 5-7m accuracy. Lower accuracy than above
+ *  but may well provide better results when overlaying data on a source
+ *  that wasn't created using OSTN02.
+ */
+OSGridPoint OSGridPointForCoordinateUsing7Parameter(CLLocationCoordinate2D coordinate);
 
 /// @name Formatting strings
 

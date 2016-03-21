@@ -146,6 +146,15 @@ OSGridPoint OSGridPointForCoordinate(CLLocationCoordinate2D coordinate) {
     return (OSGridPoint){p.x, p.y};
 }
 
+OSGridPoint OSGridPointForCoordinateUsing7Parameter(CLLocationCoordinate2D coordinate) {
+    if (!CLLocationCoordinate2DIsValid(coordinate)) {
+        return OSGridPointInvalid;
+    }
+
+    OSRMProjectedPoint p = [[OSRMProjection OSGB36NationalGridSevenParam] coordinateToProjectedPoint:coordinate];
+    return (OSGridPoint){p.x, p.y};
+}
+
 CLLocationCoordinate2D OSCoordinateForGridPoint(OSGridPoint gridPoint) {
     if (!OSGridPointIsValid(gridPoint)) {
         return kCLLocationCoordinate2DInvalid;
