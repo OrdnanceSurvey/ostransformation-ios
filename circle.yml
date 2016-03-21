@@ -1,21 +1,11 @@
 machine:
   xcode:
-    version: "6.3.1"
-dependencies:
-  override:
-    - if [ ! -f /usr/local/bin/scan-build ]; then curl http://clang-analyzer.llvm.org/downloads/checker-276.tar.bz2 -o /usr/local/Cellar/checker-276.bz2; cd /usr/local/Cellar/; tar -jxvf checker-276.bz2; ln -s /usr/local/Cellar/checker-276/scan-build /usr/local/bin/scan-build; rm checker-276.bz2; fi
+    version: "7.2"
 test:
   override:
-    - xctool
-      -reporter pretty
-      -reporter junit:$CIRCLE_TEST_REPORTS/results.xml
-      -reporter plain:$CIRCLE_ARTIFACTS/xctool.log
-      CODE_SIGNING_REQUIRED=NO
-      CODE_SIGN_IDENTITY=
-      PROVISIONING_PROFILE=
-      -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'
-      -sdk iphonesimulator
-      -scheme "OSGridPointConversion"
-      clean test
-    - mkdir $CIRCLE_TEST_REPORTS/coverage; OBJECT_DIR=`cat object_file_dir.txt`;cp -r $OBJECT_DIR `basename $OBJECT_DIR`;scripts/gcovr -r . --object-directory=$OBJECT_DIR --html --html-details -o $CIRCLE_TEST_REPORTS/coverage/index.html;rm -rf `basename $OBJECT_DIR`
-    - scan-build --status-bugs --use-analyzer=Xcode -o $CIRCLE_ARTIFACTS/analysis xcodebuild -project OSGridPointConversion.xcodeproj -scheme OSGridPointConversion -sdk iphonesimulator clean analyze
+    - set -o pipefail && xcodebuild -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
+      -sdk iphonesimulator -scheme "OSTransformation" test |
+      tee $CIRCLE_ARTIFACTS/xcodebuild.log |
+      xcpretty --report html --output $CIRCLE_TEST_REPORTS/results.html --report junit --output $CIRCLE_TEST_REPORTS/results.xml
+post:
+    - bundle exec slather

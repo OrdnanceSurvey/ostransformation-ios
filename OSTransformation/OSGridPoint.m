@@ -1,4 +1,4 @@
-// The OpenSpace iOS SDK is protected by (c) Crown copyright – Ordnance Survey
+// The OSTransformation SDK is protected by (c) Crown copyright – Ordnance Survey
 // 2012.[https://github.com/OrdnanceSurvey]
 
 // All rights reserved (subject to the BSD licence terms as follows):
@@ -143,6 +143,15 @@ OSGridPoint OSGridPointForCoordinate(CLLocationCoordinate2D coordinate) {
     }
 
     OSRMProjectedPoint p = [[OSRMProjection OSGB36NationalGrid] coordinateToProjectedPoint:coordinate];
+    return (OSGridPoint){p.x, p.y};
+}
+
+OSGridPoint OSGridPointForCoordinateUsing7Parameter(CLLocationCoordinate2D coordinate) {
+    if (!CLLocationCoordinate2DIsValid(coordinate)) {
+        return OSGridPointInvalid;
+    }
+
+    OSRMProjectedPoint p = [[OSRMProjection OSGB36NationalGridSevenParam] coordinateToProjectedPoint:coordinate];
     return (OSGridPoint){p.x, p.y};
 }
 

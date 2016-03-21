@@ -1,6 +1,6 @@
 //
 //  OSOrthometricHeight.m
-//  OSGridPointConversion
+//  OSTransformation
 //
 //  Created by Dave Hardiman on 03/06/2015.
 //  Copyright (c) 2015 Ordnance Survey. All rights reserved.

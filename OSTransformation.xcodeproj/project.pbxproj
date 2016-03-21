@@ -7,23 +7,22 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		B3A4696A1A4097CC0007B82C /* OSGridPointConversionBuildUniversal */ = {
+		B3A4696A1A4097CC0007B82C /* OSTransformationBuildUniversal */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSGridPointConversionBuildUniversal" */;
+			buildConfigurationList = B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSTransformationBuildUniversal" */;
 			buildPhases = (
 				B3A469701A4097D50007B82C /* ShellScript */,
 			);
 			dependencies = (
 				B3A4696F1A4097D20007B82C /* PBXTargetDependency */,
 			);
-			name = OSGridPointConversionBuildUniversal;
+			name = OSTransformationBuildUniversal;
 			productName = OSGridPointConversionBuildUniversal;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		452D9BA61B0DC6AC00A93068 /* OSGridPointConversion.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4557069C1B1F502C0045B0A1 /* OSGM02 in Resources */ = {isa = PBXBuildFile; fileRef = 4557069B1B1F502C0045B0A1 /* OSGM02 */; };
+		452D9BA61B0DC6AC00A93068 /* OSTransformation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSTransformation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4557069F1B1F51710045B0A1 /* OSOrthometricHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4557069D1B1F51710045B0A1 /* OSOrthometricHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		455706A01B1F51710045B0A1 /* OSOrthometricHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */; };
 		455706A21B202D280045B0A1 /* OSOrthometricHeightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */; };
@@ -33,8 +32,8 @@
 		4579DF8A1B20706C001EB6F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4579DF891B20706C001EB6F9 /* main.m */; };
 		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72F3E1741A6820E10028A18C /* NSValue+OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */; };
-		B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSGridPointConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B360D4781A3862F500F537F9 /* OSGridPointConversion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */; };
+		B360D4721A3862F500F537F9 /* OSTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B360D4781A3862F500F537F9 /* OSTransformation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSTransformation.framework */; };
 		B360D47F1A3862F500F537F9 /* OSGridPointConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */; };
 		B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA791A3865430067FEA9 /* OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B372FA7C1A3865430067FEA9 /* OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7A1A3865430067FEA9 /* OSGridPoint.m */; };
@@ -72,7 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				452D9BA61B0DC6AC00A93068 /* OSGridPointConversion.framework in CopyFiles */,
+				452D9BA61B0DC6AC00A93068 /* OSTransformation.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +98,10 @@
 		4579DF891B20706C001EB6F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
 		72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+OSGridPoint.m"; sourceTree = "<group>"; };
-		B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSGridPointConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B360D46C1A3862F500F537F9 /* OSTransformation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSTransformation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B360D4701A3862F500F537F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B360D4711A3862F500F537F9 /* OSGridPointConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSGridPointConversion.h; sourceTree = "<group>"; };
-		B360D4771A3862F500F537F9 /* OSGridPointConversionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSGridPointConversionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B360D4711A3862F500F537F9 /* OSTransformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSTransformation.h; sourceTree = "<group>"; };
+		B360D4771A3862F500F537F9 /* OSTransformation.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSTransformation.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B360D47D1A3862F500F537F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B360D47E1A3862F500F537F9 /* OSGridPointConversionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSGridPointConversionTests.m; sourceTree = "<group>"; };
 		B372FA791A3865430067FEA9 /* OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSGridPoint.h; sourceTree = "<group>"; };
@@ -137,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B360D4781A3862F500F537F9 /* OSGridPointConversion.framework in Frameworks */,
+				B360D4781A3862F500F537F9 /* OSTransformation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +154,8 @@
 		B360D4621A3862F500F537F9 = {
 			isa = PBXGroup;
 			children = (
-				B360D46E1A3862F500F537F9 /* OSGridPointConversion */,
-				B360D47B1A3862F500F537F9 /* OSGridPointConversionTests */,
+				B360D46E1A3862F500F537F9 /* OSTransformation */,
+				B360D47B1A3862F500F537F9 /* OSTransformationTests */,
 				4579DF881B20706C001EB6F9 /* genosgm02 */,
 				B360D46D1A3862F500F537F9 /* Products */,
 			);
@@ -165,17 +164,17 @@
 		B360D46D1A3862F500F537F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */,
-				B360D4771A3862F500F537F9 /* OSGridPointConversionTests.xctest */,
+				B360D46C1A3862F500F537F9 /* OSTransformation.framework */,
+				B360D4771A3862F500F537F9 /* OSTransformation.xctest */,
 				4579DF871B20706C001EB6F9 /* genosgm02 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B360D46E1A3862F500F537F9 /* OSGridPointConversion */ = {
+		B360D46E1A3862F500F537F9 /* OSTransformation */ = {
 			isa = PBXGroup;
 			children = (
-				B360D4711A3862F500F537F9 /* OSGridPointConversion.h */,
+				B360D4711A3862F500F537F9 /* OSTransformation.h */,
 				B372FA791A3865430067FEA9 /* OSGridPoint.h */,
 				B372FA7A1A3865430067FEA9 /* OSGridPoint.m */,
 				B372FA7D1A38658B0067FEA9 /* OSRMProjection.h */,
@@ -194,7 +193,7 @@
 				B372FA911A386F8B0067FEA9 /* Proj4 */,
 				B360D46F1A3862F500F537F9 /* Supporting Files */,
 			);
-			path = OSGridPointConversion;
+			path = OSTransformation;
 			sourceTree = "<group>";
 		};
 		B360D46F1A3862F500F537F9 /* Supporting Files */ = {
@@ -205,7 +204,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B360D47B1A3862F500F537F9 /* OSGridPointConversionTests */ = {
+		B360D47B1A3862F500F537F9 /* OSTransformationTests */ = {
 			isa = PBXGroup;
 			children = (
 				455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */,
@@ -213,7 +212,7 @@
 				B360D47C1A3862F500F537F9 /* Supporting Files */,
 				455706A11B202D280045B0A1 /* OSOrthometricHeightTests.m */,
 			);
-			path = OSGridPointConversionTests;
+			path = OSTransformationTests;
 			sourceTree = "<group>";
 		};
 		B360D47C1A3862F500F537F9 /* Supporting Files */ = {
@@ -248,7 +247,7 @@
 				B372FA841A3865A70067FEA9 /* OSRMFoundation.h in Headers */,
 				72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */,
 				4557069F1B1F51710045B0A1 /* OSOrthometricHeight.h in Headers */,
-				B360D4721A3862F500F537F9 /* OSGridPointConversion.h in Headers */,
+				B360D4721A3862F500F537F9 /* OSTransformation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,28 +271,27 @@
 			productReference = 4579DF871B20706C001EB6F9 /* genosgm02 */;
 			productType = "com.apple.product-type.tool";
 		};
-		B360D46B1A3862F500F537F9 /* OSGridPointConversion */ = {
+		B360D46B1A3862F500F537F9 /* OSTransformation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B360D4821A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSGridPointConversion" */;
+			buildConfigurationList = B360D4821A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSTransformation" */;
 			buildPhases = (
 				B360D4671A3862F500F537F9 /* Sources */,
 				B360D4681A3862F500F537F9 /* Frameworks */,
 				B360D4691A3862F500F537F9 /* Headers */,
 				B360D46A1A3862F500F537F9 /* Resources */,
-				452D9BA71B0DC83E00A93068 /* Output coverage location */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OSGridPointConversion;
+			name = OSTransformation;
 			productName = OSGridPointConversion;
-			productReference = B360D46C1A3862F500F537F9 /* OSGridPointConversion.framework */;
+			productReference = B360D46C1A3862F500F537F9 /* OSTransformation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B360D4761A3862F500F537F9 /* OSGridPointConversionTests */ = {
+		B360D4761A3862F500F537F9 /* OSTransformationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B360D4851A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSGridPointConversionTests" */;
+			buildConfigurationList = B360D4851A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSTransformationTests" */;
 			buildPhases = (
 				B360D4731A3862F500F537F9 /* Sources */,
 				B360D4741A3862F500F537F9 /* Frameworks */,
@@ -305,9 +303,9 @@
 			dependencies = (
 				B360D47A1A3862F500F537F9 /* PBXTargetDependency */,
 			);
-			name = OSGridPointConversionTests;
+			name = OSTransformationTests;
 			productName = OSGridPointConversionTests;
-			productReference = B360D4771A3862F500F537F9 /* OSGridPointConversionTests.xctest */;
+			productReference = B360D4771A3862F500F537F9 /* OSTransformation.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -316,7 +314,7 @@
 		B360D4631A3862F500F537F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Ordnance Survey";
 				TargetAttributes = {
 					4579DF861B20706C001EB6F9 = {
@@ -333,7 +331,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSGridPointConversion" */;
+			buildConfigurationList = B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSTransformation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -345,9 +343,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B360D46B1A3862F500F537F9 /* OSGridPointConversion */,
-				B360D4761A3862F500F537F9 /* OSGridPointConversionTests */,
-				B3A4696A1A4097CC0007B82C /* OSGridPointConversionBuildUniversal */,
+				B360D46B1A3862F500F537F9 /* OSTransformation */,
+				B360D4761A3862F500F537F9 /* OSTransformationTests */,
+				B3A4696A1A4097CC0007B82C /* OSTransformationBuildUniversal */,
 				4579DF861B20706C001EB6F9 /* genosgm02 */,
 			);
 		};
@@ -359,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C2EFE11AAE0EFA00558657 /* OSTN02_NTv2.gsb in Resources */,
-				4557069C1B1F502C0045B0A1 /* OSGM02 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,20 +371,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		452D9BA71B0DC83E00A93068 /* Output coverage location */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Output coverage location";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}\" > ${PROJECT_DIR}/object_file_dir.txt";
-		};
 		B3A469701A4097D50007B82C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,12 +423,12 @@
 /* Begin PBXTargetDependency section */
 		B360D47A1A3862F500F537F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B360D46B1A3862F500F537F9 /* OSGridPointConversion */;
+			target = B360D46B1A3862F500F537F9 /* OSTransformation */;
 			targetProxy = B360D4791A3862F500F537F9 /* PBXContainerItemProxy */;
 		};
 		B3A4696F1A4097D20007B82C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B360D46B1A3862F500F537F9 /* OSGridPointConversion */;
+			target = B360D46B1A3862F500F537F9 /* OSTransformation */;
 			targetProxy = B3A4696E1A4097D20007B82C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -499,6 +482,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -566,22 +550,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.4.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				INFOPLIST_FILE = OSGridPointConversion/Info.plist;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
+				INFOPLIST_FILE = OSTransformation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSGridPointConversion",
+					"$(PROJECT_DIR)/OSTransformation",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = OSTransformation;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -590,20 +575,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.4.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = OSGridPointConversion/Info.plist;
+				INFOPLIST_FILE = OSTransformation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSGridPointConversion",
+					"$(PROJECT_DIR)/OSTransformation",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = OSTransformation;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -611,44 +597,40 @@
 		B360D4861A3862F500F537F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = OSGridPointConversionTests/Info.plist;
+				INFOPLIST_FILE = OSTransformation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = OSTransformation;
 			};
 			name = Debug;
 		};
 		B360D4871A3862F500F537F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OSGridPointConversionTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OSTransformation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = OSTransformation;
 			};
 			name = Release;
 		};
 		B3A4696B1A4097CC0007B82C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OSTransformation;
 			};
 			name = Debug;
 		};
 		B3A4696C1A4097CC0007B82C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OSTransformation;
 			};
 			name = Release;
 		};
@@ -664,7 +646,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSGridPointConversion" */ = {
+		B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSTransformation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B360D4801A3862F500F537F9 /* Debug */,
@@ -673,7 +655,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B360D4821A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSGridPointConversion" */ = {
+		B360D4821A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSTransformation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B360D4831A3862F500F537F9 /* Debug */,
@@ -682,7 +664,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B360D4851A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSGridPointConversionTests" */ = {
+		B360D4851A3862F500F537F9 /* Build configuration list for PBXNativeTarget "OSTransformationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B360D4861A3862F500F537F9 /* Debug */,
@@ -691,7 +673,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSGridPointConversionBuildUniversal" */ = {
+		B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSTransformationBuildUniversal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3A4696B1A4097CC0007B82C /* Debug */,
