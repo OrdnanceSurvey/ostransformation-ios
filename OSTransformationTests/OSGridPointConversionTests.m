@@ -475,7 +475,7 @@ static double distanceBetweenCoords(CLLocationCoordinate2D a, CLLocationCoordina
     {
         CGRect r = CGRectNull;
         XCTAssertTrue(CGRectIsNull(r));
-        OSGridRect gr = {{r.origin.x, -CGRectGetMaxY(r)}, {r.size.width, fabsf(r.size.height)}};
+        OSGridRect gr = {{r.origin.x, -CGRectGetMaxY(r)}, {r.size.width, fabs(r.size.height)}};
         XCTAssertTrue(OSGridRectIsNull(gr));
         XCTAssertFalse(OSGridPointIsValid(gr.originSW));
     }
