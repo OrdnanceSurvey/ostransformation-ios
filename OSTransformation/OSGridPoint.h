@@ -122,7 +122,7 @@ enum {
 };
 
 /*
- *  OSLocationDistance
+ *  OSGridDistance
  *
  *  Discussion:
  *    Type used to represent a distance in meters.
