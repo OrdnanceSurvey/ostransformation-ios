@@ -113,14 +113,16 @@
     projUV uv = {aLatLong.longitude * DEG_TO_RAD, aLatLong.latitude * DEG_TO_RAD};
     int projErrorCode = 0;
     projUV result;
-    if (self.latLngIsWGS84) {
-        result = pj_fwd(uv, _internalProjection);
-    } else {
-        projErrorCode = pj_transform([[self class] WGS84LatLong]->_internalProjection, self.internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
-        if (projErrorCode != 0) {
-            NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+    @synchronized(self) {
+        if (self.latLngIsWGS84) {
+            result = pj_fwd(uv, _internalProjection);
+        } else {
+            projErrorCode = pj_transform([[self class] WGS84LatLong]->_internalProjection, self.internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+            if (projErrorCode != 0) {
+                NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+            }
+            result = uv;
         }
-        result = uv;
     }
 
     OSRMProjectedPoint result_point = {
@@ -137,14 +139,16 @@
 
     int projErrorCode = 0;
     projUV result;
-    if (self.latLngIsWGS84) {
-        result = pj_inv(uv, self.internalProjection);
-    } else {
-        projErrorCode = pj_transform(_internalProjection, [[self class] WGS84LatLong]->_internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
-        if (projErrorCode != 0) {
-            NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+    @synchronized(self) {
+        if (self.latLngIsWGS84) {
+            result = pj_inv(uv, self.internalProjection);
+        } else {
+            projErrorCode = pj_transform(_internalProjection, [[self class] WGS84LatLong]->_internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+            if (projErrorCode != 0) {
+                NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+            }
+            result = uv;
         }
-        result = uv;
     }
 
     CLLocationCoordinate2D result_coordinate = {
