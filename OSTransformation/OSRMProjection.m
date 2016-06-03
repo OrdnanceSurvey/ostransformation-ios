@@ -32,6 +32,7 @@
 #import "OSBNGTransformation.h"
 
 @implementation OSRMProjection {
+    projCtx _projContext;
     // The internal projection that has been setup
     projPJ _internalProjection;
 
@@ -47,7 +48,8 @@
     if (!(self = [super init]))
         return nil;
 
-    _internalProjection = pj_init_plus([proj4String UTF8String]);
+    _projContext = pj_ctx_alloc();
+    _internalProjection = pj_init_plus_ctx(_projContext, [proj4String UTF8String]);
 
     if (_internalProjection == NULL) {
         NSLog(@"Unhandled error creating projection. String is %@", proj4String);
@@ -74,6 +76,9 @@
 - (void)dealloc {
     if (self.internalProjection) {
         pj_free(self.internalProjection);
+    }
+    if (_projContext) {
+        pj_ctx_free(_projContext);
     }
 }
 
@@ -108,14 +113,16 @@
     projUV uv = {aLatLong.longitude * DEG_TO_RAD, aLatLong.latitude * DEG_TO_RAD};
     int projErrorCode = 0;
     projUV result;
-    if (self.latLngIsWGS84) {
-        result = pj_fwd(uv, _internalProjection);
-    } else {
-        projErrorCode = pj_transform([[self class] WGS84LatLong]->_internalProjection, self.internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
-        if (projErrorCode != 0) {
-            NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+    @synchronized(self) {
+        if (self.latLngIsWGS84) {
+            result = pj_fwd(uv, _internalProjection);
+        } else {
+            projErrorCode = pj_transform([[self class] WGS84LatLong]->_internalProjection, self.internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+            if (projErrorCode != 0) {
+                NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+            }
+            result = uv;
         }
-        result = uv;
     }
 
     OSRMProjectedPoint result_point = {
@@ -132,14 +139,16 @@
 
     int projErrorCode = 0;
     projUV result;
-    if (self.latLngIsWGS84) {
-        result = pj_inv(uv, self.internalProjection);
-    } else {
-        projErrorCode = pj_transform(_internalProjection, [[self class] WGS84LatLong]->_internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
-        if (projErrorCode != 0) {
-            NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+    @synchronized(self) {
+        if (self.latLngIsWGS84) {
+            result = pj_inv(uv, self.internalProjection);
+        } else {
+            projErrorCode = pj_transform(_internalProjection, [[self class] WGS84LatLong]->_internalProjection, 1, 1, &(uv.u), &(uv.v), NULL);
+            if (projErrorCode != 0) {
+                NSLog(@"Proj4 error: %s", pj_strerrno(projErrorCode));
+            }
+            result = uv;
         }
-        result = uv;
     }
 
     CLLocationCoordinate2D result_coordinate = {
