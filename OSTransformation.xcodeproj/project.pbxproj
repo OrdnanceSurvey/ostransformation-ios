@@ -30,6 +30,23 @@
 		45771D341C45520900324679 /* OSBNGTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45771D321C45520900324679 /* OSBNGTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45771D351C45520900324679 /* OSBNGTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45771D331C45520900324679 /* OSBNGTransformation.m */; };
 		4579DF8A1B20706C001EB6F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4579DF891B20706C001EB6F9 /* main.m */; };
+		45B1AD451D10436700A7B5D0 /* OSTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B1AD461D10437400A7B5D0 /* OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA791A3865430067FEA9 /* OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B1AD471D10437800A7B5D0 /* OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7A1A3865430067FEA9 /* OSGridPoint.m */; };
+		45B1AD481D10437B00A7B5D0 /* OSRMProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA7D1A38658B0067FEA9 /* OSRMProjection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B1AD491D10438000A7B5D0 /* OSRMProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7E1A38658B0067FEA9 /* OSRMProjection.m */; };
+		45B1AD4A1D10438300A7B5D0 /* OSRMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA821A3865A70067FEA9 /* OSRMFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B1AD4B1D10438800A7B5D0 /* OSRMFoundation.c in Sources */ = {isa = PBXBuildFile; fileRef = B372FA811A3865A70067FEA9 /* OSRMFoundation.c */; };
+		45B1AD4C1D10438E00A7B5D0 /* OSTN02_NTv2.gsb in Resources */ = {isa = PBXBuildFile; fileRef = B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */; };
+		45B1AD4D1D10439400A7B5D0 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */; };
+		45B1AD4E1D10439900A7B5D0 /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B1AD4F1D1044BB00A7B5D0 /* NSValue+OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3E1721A6820E10028A18C /* NSValue+OSGridPoint.m */; };
+		45B1AD501D1044BF00A7B5D0 /* OSOrthometricHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4557069D1B1F51710045B0A1 /* OSOrthometricHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B1AD511D1044C700A7B5D0 /* OSOrthometricHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */; };
+		45B1AD521D1044CB00A7B5D0 /* OSBNGTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45771D321C45520900324679 /* OSBNGTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B1AD531D1044CF00A7B5D0 /* OSBNGTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45771D331C45520900324679 /* OSBNGTransformation.m */; };
+		45B1AD541D1044DC00A7B5D0 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C2F08A1AAF127100558657 /* proj_api.h */; };
+		45B1AE211D11587400A7B5D0 /* libProj4Watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1AE201D11587400A7B5D0 /* libProj4Watch.a */; };
 		45B278591CA017BB00E6AA64 /* OSGM02 in Resources */ = {isa = PBXBuildFile; fileRef = 4557069B1B1F502C0045B0A1 /* OSGM02 */; };
 		45B2785C1CA0183000E6AA64 /* OSGM02Stub.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B2785B1CA0182B00E6AA64 /* OSGM02Stub.m */; };
 		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,6 +115,9 @@
 		45771D331C45520900324679 /* OSBNGTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSBNGTransformation.m; sourceTree = "<group>"; };
 		4579DF871B20706C001EB6F9 /* genosgm02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = genosgm02; sourceTree = BUILT_PRODUCTS_DIR; };
 		4579DF891B20706C001EB6F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45B1AD3D1D1042E500A7B5D0 /* OSTransformation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSTransformation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B1AD411D1042E500A7B5D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B1AE201D11587400A7B5D0 /* libProj4Watch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProj4Watch.a; sourceTree = "<group>"; };
 		45B2785A1CA0182B00E6AA64 /* OSGM02Stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSGM02Stub.h; sourceTree = "<group>"; };
 		45B2785B1CA0182B00E6AA64 /* OSGM02Stub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSGM02Stub.m; sourceTree = "<group>"; };
 		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
@@ -128,6 +148,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45B1AD391D1042E500A7B5D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B1AE211D11587400A7B5D0 /* libProj4Watch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B360D4681A3862F500F537F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,12 +183,21 @@
 			path = genosgm02;
 			sourceTree = "<group>";
 		};
+		45B1AD3E1D1042E500A7B5D0 /* OSTransformationWatch */ = {
+			isa = PBXGroup;
+			children = (
+				45B1AD411D1042E500A7B5D0 /* Info.plist */,
+			);
+			path = OSTransformationWatch;
+			sourceTree = "<group>";
+		};
 		B360D4621A3862F500F537F9 = {
 			isa = PBXGroup;
 			children = (
 				B360D46E1A3862F500F537F9 /* OSTransformation */,
 				B360D47B1A3862F500F537F9 /* OSTransformationTests */,
 				4579DF881B20706C001EB6F9 /* genosgm02 */,
+				45B1AD3E1D1042E500A7B5D0 /* OSTransformationWatch */,
 				B360D46D1A3862F500F537F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -171,6 +208,7 @@
 				B360D46C1A3862F500F537F9 /* OSTransformation.framework */,
 				B360D4771A3862F500F537F9 /* OSTransformation.xctest */,
 				4579DF871B20706C001EB6F9 /* genosgm02 */,
+				45B1AD3D1D1042E500A7B5D0 /* OSTransformation.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +272,7 @@
 			children = (
 				B3C2F08A1AAF127100558657 /* proj_api.h */,
 				B3C2F1431AAF1BCA00558657 /* libProj4.a */,
+				45B1AE201D11587400A7B5D0 /* libProj4Watch.a */,
 			);
 			name = Proj4;
 			sourceTree = "<group>";
@@ -241,6 +280,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		45B1AD3A1D1042E500A7B5D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B1AD4D1D10439400A7B5D0 /* RMGlobalConstants.h in Headers */,
+				45B1AD4E1D10439900A7B5D0 /* NSValue+OSGridPoint.h in Headers */,
+				45B1AD541D1044DC00A7B5D0 /* proj_api.h in Headers */,
+				45B1AD481D10437B00A7B5D0 /* OSRMProjection.h in Headers */,
+				45B1AD451D10436700A7B5D0 /* OSTransformation.h in Headers */,
+				45B1AD461D10437400A7B5D0 /* OSGridPoint.h in Headers */,
+				45B1AD501D1044BF00A7B5D0 /* OSOrthometricHeight.h in Headers */,
+				45B1AD521D1044CB00A7B5D0 /* OSBNGTransformation.h in Headers */,
+				45B1AD4A1D10438300A7B5D0 /* OSRMFoundation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B360D4691A3862F500F537F9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +331,24 @@
 			productName = genosgm02;
 			productReference = 4579DF871B20706C001EB6F9 /* genosgm02 */;
 			productType = "com.apple.product-type.tool";
+		};
+		45B1AD3C1D1042E500A7B5D0 /* OSTransformationWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B1AD441D1042E500A7B5D0 /* Build configuration list for PBXNativeTarget "OSTransformationWatch" */;
+			buildPhases = (
+				45B1AD381D1042E500A7B5D0 /* Sources */,
+				45B1AD391D1042E500A7B5D0 /* Frameworks */,
+				45B1AD3A1D1042E500A7B5D0 /* Headers */,
+				45B1AD3B1D1042E500A7B5D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSTransformationWatch;
+			productName = OSTransformationWatch;
+			productReference = 45B1AD3D1D1042E500A7B5D0 /* OSTransformation.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		B360D46B1A3862F500F537F9 /* OSTransformation */ = {
 			isa = PBXNativeTarget;
@@ -326,6 +399,9 @@
 					4579DF861B20706C001EB6F9 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
+					45B1AD3C1D1042E500A7B5D0 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					B360D46B1A3862F500F537F9 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -350,6 +426,7 @@
 			projectRoot = "";
 			targets = (
 				B360D46B1A3862F500F537F9 /* OSTransformation */,
+				45B1AD3C1D1042E500A7B5D0 /* OSTransformationWatch */,
 				B360D4761A3862F500F537F9 /* OSTransformationTests */,
 				B3A4696A1A4097CC0007B82C /* OSTransformationBuildUniversal */,
 				4579DF861B20706C001EB6F9 /* genosgm02 */,
@@ -358,6 +435,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		45B1AD3B1D1042E500A7B5D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B1AD4C1D10438E00A7B5D0 /* OSTN02_NTv2.gsb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B360D46A1A3862F500F537F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +485,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4579DF8A1B20706C001EB6F9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B1AD381D1042E500A7B5D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B1AD471D10437800A7B5D0 /* OSGridPoint.m in Sources */,
+				45B1AD511D1044C700A7B5D0 /* OSOrthometricHeight.m in Sources */,
+				45B1AD491D10438000A7B5D0 /* OSRMProjection.m in Sources */,
+				45B1AD4B1D10438800A7B5D0 /* OSRMFoundation.c in Sources */,
+				45B1AD531D1044CF00A7B5D0 /* OSBNGTransformation.m in Sources */,
+				45B1AD4F1D1044BB00A7B5D0 /* NSValue+OSGridPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +564,62 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		45B1AD421D1042E500A7B5D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = OSTransformationWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSTransformation",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.os.OSTransformation.watch;
+				PRODUCT_NAME = OSTransformation;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		45B1AD431D1042E500A7B5D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = OSTransformationWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSTransformation",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.os.OSTransformation.watch;
+				PRODUCT_NAME = OSTransformation;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -651,6 +805,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		45B1AD441D1042E500A7B5D0 /* Build configuration list for PBXNativeTarget "OSTransformationWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B1AD421D1042E500A7B5D0 /* Debug */,
+				45B1AD431D1042E500A7B5D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSTransformation" */ = {
 			isa = XCConfigurationList;
