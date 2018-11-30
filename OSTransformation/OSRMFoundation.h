@@ -84,7 +84,7 @@ OSRMProjectedPoint OSRMProjectedPointMake(double x, double y);
 OSRMProjectedRect OSRMProjectedRectMake(double x, double y, double width, double height);
 OSRMProjectedSize OSRMProjectedSizeMake(double width, double heigth);
 
-OSRMProjectedRect OSRMProjectedRectZero();
+OSRMProjectedRect OSRMProjectedRectZero(void);
 bool OSRMProjectedRectIsZero(OSRMProjectedRect rect);
 
 #pragma mark -

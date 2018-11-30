@@ -120,7 +120,7 @@ OSRMProjectedSize OSRMProjectedSizeMake(double width, double heigth) {
     return size;
 }
 
-OSRMProjectedRect OSRMProjectedRectZero() {
+OSRMProjectedRect OSRMProjectedRectZero(void) {
     return OSRMProjectedRectMake(0.0, 0.0, 0.0, 0.0);
 }
 
