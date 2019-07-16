@@ -6,21 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		B3A4696A1A4097CC0007B82C /* OSTransformationBuildUniversal */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSTransformationBuildUniversal" */;
-			buildPhases = (
-				B3A469701A4097D50007B82C /* ShellScript */,
-			);
-			dependencies = (
-				B3A4696F1A4097D20007B82C /* PBXTargetDependency */,
-			);
-			name = OSTransformationBuildUniversal;
-			productName = OSGridPointConversionBuildUniversal;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		452D9BA61B0DC6AC00A93068 /* OSTransformation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360D46C1A3862F500F537F9 /* OSTransformation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4557069F1B1F51710045B0A1 /* OSOrthometricHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4557069D1B1F51710045B0A1 /* OSOrthometricHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,7 +14,6 @@
 		455706A41B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv in Resources */ = {isa = PBXBuildFile; fileRef = 455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */; };
 		45771D341C45520900324679 /* OSBNGTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45771D321C45520900324679 /* OSBNGTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45771D351C45520900324679 /* OSBNGTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45771D331C45520900324679 /* OSBNGTransformation.m */; };
-		4579DF8A1B20706C001EB6F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4579DF891B20706C001EB6F9 /* main.m */; };
 		45B1AD451D10436700A7B5D0 /* OSTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = B360D4711A3862F500F537F9 /* OSTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B1AD461D10437400A7B5D0 /* OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA791A3865430067FEA9 /* OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B1AD471D10437800A7B5D0 /* OSGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B372FA7A1A3865430067FEA9 /* OSGridPoint.m */; };
@@ -45,8 +29,6 @@
 		45B1AD511D1044C700A7B5D0 /* OSOrthometricHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */; };
 		45B1AD521D1044CB00A7B5D0 /* OSBNGTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45771D321C45520900324679 /* OSBNGTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B1AD531D1044CF00A7B5D0 /* OSBNGTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45771D331C45520900324679 /* OSBNGTransformation.m */; };
-		45B1AD541D1044DC00A7B5D0 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C2F08A1AAF127100558657 /* proj_api.h */; };
-		45B1AE211D11587400A7B5D0 /* libProj4Watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1AE201D11587400A7B5D0 /* libProj4Watch.a */; };
 		45B278591CA017BB00E6AA64 /* OSGM02 in Resources */ = {isa = PBXBuildFile; fileRef = 4557069B1B1F502C0045B0A1 /* OSGM02 */; };
 		45B2785C1CA0183000E6AA64 /* OSGM02Stub.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B2785B1CA0182B00E6AA64 /* OSGM02Stub.m */; };
 		72F3E1731A6820E10028A18C /* NSValue+OSGridPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -62,8 +44,8 @@
 		B372FA841A3865A70067FEA9 /* OSRMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA821A3865A70067FEA9 /* OSRMFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */; };
 		B3C2EFE11AAE0EFA00558657 /* OSTN02_NTv2.gsb in Resources */ = {isa = PBXBuildFile; fileRef = B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */; };
-		B3C2F1381AAF127100558657 /* proj_api.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C2F08A1AAF127100558657 /* proj_api.h */; };
-		B3C2F1441AAF1BCA00558657 /* libProj4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C2F1431AAF1BCA00558657 /* libProj4.a */; };
+		B4CB324F22DDE457001E865D /* Poj4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB324C22DDE425001E865D /* Poj4.framework */; };
+		B4CB32F822DDE963001E865D /* Poj4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB32F722DDE95C001E865D /* Poj4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,12 +56,33 @@
 			remoteGlobalIDString = B360D46B1A3862F500F537F9;
 			remoteInfo = OSGridPointConversion;
 		};
-		B3A4696E1A4097D20007B82C /* PBXContainerItemProxy */ = {
+		B4CB324B22DDE425001E865D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B360D4631A3862F500F537F9 /* Project object */;
+			containerPortal = B4CB324122DDE425001E865D /* Proj4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B450057E22DDD60600171E19;
+			remoteInfo = Poj4;
+		};
+		B4CB324D22DDE452001E865D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB324122DDE425001E865D /* Proj4.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = B360D46B1A3862F500F537F9;
-			remoteInfo = OSGridPointConversion;
+			remoteGlobalIDString = B450057D22DDD60600171E19;
+			remoteInfo = Poj4;
+		};
+		B4CB32F322DDE95C001E865D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB324122DDE425001E865D /* Proj4.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B4CB325022DDE93F001E865D;
+			remoteInfo = Poj4_watch;
+		};
+		B4CB32F622DDE95C001E865D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB324122DDE425001E865D /* Proj4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4CB32F122DDE93F001E865D;
+			remoteInfo = Poj4_watch;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -94,15 +97,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4579DF851B20706C001EB6F9 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -113,11 +107,8 @@
 		455706A31B202D9C0045B0A1 /* OSTN02_OSGM02Tests_Out.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OSTN02_OSGM02Tests_Out.csv; sourceTree = "<group>"; };
 		45771D321C45520900324679 /* OSBNGTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSBNGTransformation.h; sourceTree = "<group>"; };
 		45771D331C45520900324679 /* OSBNGTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSBNGTransformation.m; sourceTree = "<group>"; };
-		4579DF871B20706C001EB6F9 /* genosgm02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = genosgm02; sourceTree = BUILT_PRODUCTS_DIR; };
-		4579DF891B20706C001EB6F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45B1AD3D1D1042E500A7B5D0 /* OSTransformation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSTransformation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B1AD411D1042E500A7B5D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45B1AE201D11587400A7B5D0 /* libProj4Watch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProj4Watch.a; sourceTree = "<group>"; };
 		45B2785A1CA0182B00E6AA64 /* OSGM02Stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSGM02Stub.h; sourceTree = "<group>"; };
 		45B2785B1CA0182B00E6AA64 /* OSGM02Stub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSGM02Stub.m; sourceTree = "<group>"; };
 		72F3E1711A6820E10028A18C /* NSValue+OSGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OSGridPoint.h"; sourceTree = "<group>"; };
@@ -136,23 +127,15 @@
 		B372FA821A3865A70067FEA9 /* OSRMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSRMFoundation.h; sourceTree = "<group>"; };
 		B372FA851A3865C10067FEA9 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
 		B3C2EFE01AAE0EFA00558657 /* OSTN02_NTv2.gsb */ = {isa = PBXFileReference; lastKnownFileType = file; path = OSTN02_NTv2.gsb; sourceTree = "<group>"; };
-		B3C2F08A1AAF127100558657 /* proj_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proj_api.h; sourceTree = "<group>"; };
-		B3C2F1431AAF1BCA00558657 /* libProj4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProj4.a; sourceTree = "<group>"; };
+		B4CB324122DDE425001E865D /* Proj4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Proj4.xcodeproj; path = Proj4/Proj4.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4579DF841B20706C001EB6F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45B1AD391D1042E500A7B5D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B1AE211D11587400A7B5D0 /* libProj4Watch.a in Frameworks */,
+				B4CB32F822DDE963001E865D /* Poj4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C2F1441AAF1BCA00558657 /* libProj4.a in Frameworks */,
+				B4CB324F22DDE457001E865D /* Poj4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,14 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4579DF881B20706C001EB6F9 /* genosgm02 */ = {
-			isa = PBXGroup;
-			children = (
-				4579DF891B20706C001EB6F9 /* main.m */,
-			);
-			path = genosgm02;
-			sourceTree = "<group>";
-		};
 		45B1AD3E1D1042E500A7B5D0 /* OSTransformationWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,11 +169,12 @@
 		B360D4621A3862F500F537F9 = {
 			isa = PBXGroup;
 			children = (
+				B4CB324122DDE425001E865D /* Proj4.xcodeproj */,
 				B360D46E1A3862F500F537F9 /* OSTransformation */,
 				B360D47B1A3862F500F537F9 /* OSTransformationTests */,
-				4579DF881B20706C001EB6F9 /* genosgm02 */,
 				45B1AD3E1D1042E500A7B5D0 /* OSTransformationWatch */,
 				B360D46D1A3862F500F537F9 /* Products */,
+				B450024522DDC47000171E19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,7 +183,6 @@
 			children = (
 				B360D46C1A3862F500F537F9 /* OSTransformation.framework */,
 				B360D4771A3862F500F537F9 /* OSTransformation.xctest */,
-				4579DF871B20706C001EB6F9 /* genosgm02 */,
 				45B1AD3D1D1042E500A7B5D0 /* OSTransformation.framework */,
 			);
 			name = Products;
@@ -232,7 +207,6 @@
 				4557069E1B1F51710045B0A1 /* OSOrthometricHeight.m */,
 				45771D321C45520900324679 /* OSBNGTransformation.h */,
 				45771D331C45520900324679 /* OSBNGTransformation.m */,
-				B372FA911A386F8B0067FEA9 /* Proj4 */,
 				B360D46F1A3862F500F537F9 /* Supporting Files */,
 				45B2785A1CA0182B00E6AA64 /* OSGM02Stub.h */,
 				45B2785B1CA0182B00E6AA64 /* OSGM02Stub.m */,
@@ -267,14 +241,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B372FA911A386F8B0067FEA9 /* Proj4 */ = {
+		B450024522DDC47000171E19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B3C2F08A1AAF127100558657 /* proj_api.h */,
-				B3C2F1431AAF1BCA00558657 /* libProj4.a */,
-				45B1AE201D11587400A7B5D0 /* libProj4Watch.a */,
 			);
-			name = Proj4;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4CB324222DDE425001E865D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4CB324C22DDE425001E865D /* Poj4.framework */,
+				B4CB32F722DDE95C001E865D /* Poj4.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +266,6 @@
 			files = (
 				45B1AD4D1D10439400A7B5D0 /* RMGlobalConstants.h in Headers */,
 				45B1AD4E1D10439900A7B5D0 /* NSValue+OSGridPoint.h in Headers */,
-				45B1AD541D1044DC00A7B5D0 /* proj_api.h in Headers */,
 				45B1AD481D10437B00A7B5D0 /* OSRMProjection.h in Headers */,
 				45B1AD451D10436700A7B5D0 /* OSTransformation.h in Headers */,
 				45B1AD461D10437400A7B5D0 /* OSGridPoint.h in Headers */,
@@ -300,7 +279,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C2F1381AAF127100558657 /* proj_api.h in Headers */,
 				45771D341C45520900324679 /* OSBNGTransformation.h in Headers */,
 				B372FA7B1A3865430067FEA9 /* OSGridPoint.h in Headers */,
 				B372FA861A3865C10067FEA9 /* RMGlobalConstants.h in Headers */,
@@ -315,23 +293,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4579DF861B20706C001EB6F9 /* genosgm02 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4579DF8D1B20706C001EB6F9 /* Build configuration list for PBXNativeTarget "genosgm02" */;
-			buildPhases = (
-				4579DF831B20706C001EB6F9 /* Sources */,
-				4579DF841B20706C001EB6F9 /* Frameworks */,
-				4579DF851B20706C001EB6F9 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = genosgm02;
-			productName = genosgm02;
-			productReference = 4579DF871B20706C001EB6F9 /* genosgm02 */;
-			productType = "com.apple.product-type.tool";
-		};
 		45B1AD3C1D1042E500A7B5D0 /* OSTransformationWatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B1AD441D1042E500A7B5D0 /* Build configuration list for PBXNativeTarget "OSTransformationWatch" */;
@@ -344,6 +305,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B4CB32F422DDE95C001E865D /* PBXTargetDependency */,
 			);
 			name = OSTransformationWatch;
 			productName = OSTransformationWatch;
@@ -362,6 +324,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B4CB324E22DDE452001E865D /* PBXTargetDependency */,
 			);
 			name = OSTransformation;
 			productName = OSGridPointConversion;
@@ -393,12 +356,9 @@
 		B360D4631A3862F500F537F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Ordnance Survey";
 				TargetAttributes = {
-					4579DF861B20706C001EB6F9 = {
-						CreatedOnToolsVersion = 6.3.2;
-					};
 					45B1AD3C1D1042E500A7B5D0 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -407,32 +367,52 @@
 					};
 					B360D4761A3862F500F537F9 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					B3A4696A1A4097CC0007B82C = {
-						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = R5CKPB784S;
 					};
 				};
 			};
 			buildConfigurationList = B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSTransformation" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B360D4621A3862F500F537F9;
 			productRefGroup = B360D46D1A3862F500F537F9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B4CB324222DDE425001E865D /* Products */;
+					ProjectRef = B4CB324122DDE425001E865D /* Proj4.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B360D46B1A3862F500F537F9 /* OSTransformation */,
 				45B1AD3C1D1042E500A7B5D0 /* OSTransformationWatch */,
 				B360D4761A3862F500F537F9 /* OSTransformationTests */,
-				B3A4696A1A4097CC0007B82C /* OSTransformationBuildUniversal */,
-				4579DF861B20706C001EB6F9 /* genosgm02 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B4CB324C22DDE425001E865D /* Poj4.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Poj4.framework;
+			remoteRef = B4CB324B22DDE425001E865D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4CB32F722DDE95C001E865D /* Poj4.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Poj4.framework;
+			remoteRef = B4CB32F622DDE95C001E865D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		45B1AD3B1D1042E500A7B5D0 /* Resources */ = {
@@ -462,32 +442,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B3A469701A4097D50007B82C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n# This script builds the framework for both the simulator and the device, and then combines\n# them into one binary using lipo.\n#\n# On build success, the result is placed into the project folder, and finder will open to\n# that location for convenient access to the newly built framework.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 4. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}/build\"\n\n# Step 5. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}/build\"";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		4579DF831B20706C001EB6F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4579DF8A1B20706C001EB6F9 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45B1AD381D1042E500A7B5D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -532,41 +487,19 @@
 			target = B360D46B1A3862F500F537F9 /* OSTransformation */;
 			targetProxy = B360D4791A3862F500F537F9 /* PBXContainerItemProxy */;
 		};
-		B3A4696F1A4097D20007B82C /* PBXTargetDependency */ = {
+		B4CB324E22DDE452001E865D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B360D46B1A3862F500F537F9 /* OSTransformation */;
-			targetProxy = B3A4696E1A4097D20007B82C /* PBXContainerItemProxy */;
+			name = Poj4;
+			targetProxy = B4CB324D22DDE452001E865D /* PBXContainerItemProxy */;
+		};
+		B4CB32F422DDE95C001E865D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Poj4_watch;
+			targetProxy = B4CB32F322DDE95C001E865D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4579DF8B1B20706C001EB6F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		4579DF8C1B20706C001EB6F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		45B1AD421D1042E500A7B5D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -583,7 +516,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSTransformation",
+					"$(PROJECT_DIR)/Proj4",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.os.OSTransformation.watch;
 				PRODUCT_NAME = OSTransformation;
@@ -612,7 +545,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSTransformation",
+					"$(PROJECT_DIR)/Proj4",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.os.OSTransformation.watch;
 				PRODUCT_NAME = OSTransformation;
@@ -627,17 +560,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -647,6 +591,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -659,10 +604,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				ONLY_ACTIVE_ARCH = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -673,17 +617,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -692,15 +647,15 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -711,7 +666,7 @@
 		B360D4831A3862F500F537F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CURRENT_PROJECT_VERSION = 1.4.1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -724,10 +679,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSTransformation",
+					"$(PROJECT_DIR)/Proj4",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -735,7 +691,7 @@
 		B360D4841A3862F500F537F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CURRENT_PROJECT_VERSION = 1.4.1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -746,10 +702,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSTransformation",
+					"$(PROJECT_DIR)/Proj4",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -757,6 +714,7 @@
 		B360D4861A3862F500F537F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = R5CKPB784S;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -766,46 +724,26 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		B360D4871A3862F500F537F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = R5CKPB784S;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OSTransformation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.ordnancesurvey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = OSTransformation;
-			};
-			name = Release;
-		};
-		B3A4696B1A4097CC0007B82C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = OSTransformation;
-			};
-			name = Debug;
-		};
-		B3A4696C1A4097CC0007B82C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = OSTransformation;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4579DF8D1B20706C001EB6F9 /* Build configuration list for PBXNativeTarget "genosgm02" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4579DF8B1B20706C001EB6F9 /* Debug */,
-				4579DF8C1B20706C001EB6F9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		45B1AD441D1042E500A7B5D0 /* Build configuration list for PBXNativeTarget "OSTransformationWatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -813,6 +751,7 @@
 				45B1AD431D1042E500A7B5D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B360D4661A3862F500F537F9 /* Build configuration list for PBXProject "OSTransformation" */ = {
 			isa = XCConfigurationList;
@@ -837,15 +776,6 @@
 			buildConfigurations = (
 				B360D4861A3862F500F537F9 /* Debug */,
 				B360D4871A3862F500F537F9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B3A4696D1A4097CC0007B82C /* Build configuration list for PBXAggregateTarget "OSTransformationBuildUniversal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B3A4696B1A4097CC0007B82C /* Debug */,
-				B3A4696C1A4097CC0007B82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

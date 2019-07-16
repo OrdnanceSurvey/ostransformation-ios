@@ -26,13 +26,12 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #import "RMGlobalConstants.h"
-#import "proj_api.h"
+#import <Poj4/proj_api.h>
 #import "OSRMProjection.h"
 #import "OSGridPoint.h"
 #import "OSBNGTransformation.h"
 
 @implementation OSRMProjection {
-    projCtx _projContext;
     // The internal projection that has been setup
     projPJ _internalProjection;
 
@@ -48,8 +47,7 @@
     if (!(self = [super init]))
         return nil;
 
-    _projContext = pj_ctx_alloc();
-    _internalProjection = pj_init_plus_ctx(_projContext, [proj4String UTF8String]);
+    _internalProjection = pj_init_plus([proj4String UTF8String]);
 
     if (_internalProjection == NULL) {
         NSLog(@"Unhandled error creating projection. String is %@", proj4String);
@@ -74,11 +72,8 @@
 }
 
 - (void)dealloc {
-    if (self.internalProjection) {
-        pj_free(self.internalProjection);
-    }
-    if (_projContext) {
-        pj_ctx_free(_projContext);
+    if (_internalProjection) {
+        pj_free(_internalProjection);
     }
 }
 

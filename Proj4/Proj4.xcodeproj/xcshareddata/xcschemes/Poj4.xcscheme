@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45B1AD3C1D1042E500A7B5D0"
-               BuildableName = "OSTransformation.framework"
-               BlueprintName = "OSTransformationWatch"
-               ReferencedContainer = "container:OSTransformation.xcodeproj">
+               BlueprintIdentifier = "B450057D22DDD60600171E19"
+               BuildableName = "Poj4.framework"
+               BlueprintName = "Poj4"
+               ReferencedContainer = "container:Proj4.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B1AD3C1D1042E500A7B5D0"
-            BuildableName = "OSTransformation.framework"
-            BlueprintName = "OSTransformationWatch"
-            ReferencedContainer = "container:OSTransformation.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,10 +50,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B1AD3C1D1042E500A7B5D0"
-            BuildableName = "OSTransformation.framework"
-            BlueprintName = "OSTransformationWatch"
-            ReferencedContainer = "container:OSTransformation.xcodeproj">
+            BlueprintIdentifier = "B450057D22DDD60600171E19"
+            BuildableName = "Poj4.framework"
+            BlueprintName = "Poj4"
+            ReferencedContainer = "container:Proj4.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
